@@ -82,13 +82,11 @@ namespace Dram_Capstone.Data
                     FragrantFlavorId = 1,
                     Name = "Lavender"
                 },
-
                 new FragrantFlavor()
                 {
                     FragrantFlavorId = 2,
                     Name = "Acetone"
                 },
-
                 new FragrantFlavor()
                 {
                     FragrantFlavorId = 3,
@@ -156,6 +154,192 @@ namespace Dram_Capstone.Data
                     Name = "Raisins"
                 }
             );
+
+            modelBuilder.Entity<GrainyFlavor>().HasData(
+                new GrainyFlavor()
+                {
+                    GrainyFlavorId = 1,
+                    Name = "Coffee"
+                },
+                new GrainyFlavor()
+                {
+                    GrainyFlavorId = 2,
+                    Name = "Dried Hops"
+                },
+                new GrainyFlavor()
+                {
+                    GrainyFlavorId = 3,
+                    Name = "Malted Milk"
+                },
+                new GrainyFlavor()
+                {
+                    GrainyFlavorId = 4,
+                    Name = "Breakfast Cereal"
+                },
+                new GrainyFlavor()
+                {
+                    GrainyFlavorId = 5,
+                    Name = "Biscuits"
+                }
+            );
+
+            modelBuilder.Entity<GrassyFlavor>().HasData(
+               new GrassyFlavor()
+               {
+                   GrassyFlavorId = 1,
+                   Name = "Cut Grass"
+               },
+               new GrassyFlavor()
+               {
+                   GrassyFlavorId = 2,
+                   Name = "Green Sticks"
+               },
+               new GrassyFlavor()
+               {
+                   GrassyFlavorId = 3,
+                   Name = "Tobacco"
+               },
+               new GrassyFlavor()
+               {
+                   GrassyFlavorId = 4,
+                   Name = "Dried Herbs"
+               },
+               new GrassyFlavor()
+               {
+                   GrassyFlavorId = 5,
+                   Name = "Dried Tea Leaf"
+               }
+           );
+
+            modelBuilder.Entity<OffNoteFlavor>().HasData(
+               new OffNoteFlavor()
+               {
+                   OffNoteFlavorId = 1,
+                   Name = "Earthy",
+               },
+               new OffNoteFlavor()
+               {
+                   OffNoteFlavorId = 2,
+                   Name = "Roast Meat",
+               },
+               new OffNoteFlavor()
+               {
+                   OffNoteFlavorId = 3,
+                   Name = "Fatty",
+               },
+               new OffNoteFlavor()
+               {
+                   OffNoteFlavorId = 4,
+                   Name = "Leather",
+               },
+               new OffNoteFlavor()
+               {
+                   OffNoteFlavorId = 5,
+                   Name = "Struck Matches",
+               },
+               new OffNoteFlavor()
+               {
+                   OffNoteFlavorId = 6,
+                   Name = "Rusty",
+               },
+               new OffNoteFlavor()
+               {
+                   OffNoteFlavorId = 7,
+                   Name = "Vinegar",
+               }
+             
+           );
+
+            modelBuilder.Entity<PeatyFlavor>().HasData(
+               new PeatyFlavor()
+               {
+                   PeatyFlavorId = 1,
+                   Name = "Shellfish"
+               },
+                new PeatyFlavor()
+                {
+                    PeatyFlavorId = 2,
+                    Name = "Brine"
+                },
+                new PeatyFlavor()
+                {
+                    PeatyFlavorId = 3,
+                    Name = "Seaweed"
+                },
+                new PeatyFlavor()
+                {
+                    PeatyFlavorId = 4,
+                    Name = "Iodine"
+                },
+                new PeatyFlavor()
+                {
+                    PeatyFlavorId = 5,
+                    Name = "Mouthwash"
+                },
+                new PeatyFlavor()
+                {
+                    PeatyFlavorId = 6,
+                    Name = "Peat Smoke"
+                },
+                new PeatyFlavor()
+                {
+                    PeatyFlavorId = 7,
+                    Name = "Smoked Salmon"
+                }
+           );
+
+            modelBuilder.Entity<WineyFlavor>().HasData(
+                new WineyFlavor()
+                {
+                    WineyFlavorId = 1,
+                    Name = "Almond"
+                },
+                new WineyFlavor()
+                {
+                    WineyFlavorId = 2,
+                    Name = "Cream"
+                },
+                new WineyFlavor()
+                {
+                    WineyFlavorId = 3,
+                    Name = "Butter"
+                },
+                new WineyFlavor()
+                {
+                    WineyFlavorId = 4,
+                    Name = "Chocolate"
+                },
+                new WineyFlavor()
+                {
+                    WineyFlavorId = 5,
+                    Name = "Olive"
+                },
+                new WineyFlavor()
+                {
+                    WineyFlavorId = 6,
+                    Name = "Sherry"
+                },
+                new WineyFlavor()
+                {
+                    WineyFlavorId = 7,
+                    Name = "Port"
+                },
+                new WineyFlavor()
+                {
+                    WineyFlavorId = 8,
+                    Name = "Red Wine"
+                }
+
+           );
+
+            modelBuilder.Entity<WoodyFlavor>().HasData(
+               new WoodyFlavor()
+               {
+                   WoodyFlavorId = 1,
+
+               }
+           );
+           
         }
     }
 }
