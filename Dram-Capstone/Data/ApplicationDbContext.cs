@@ -336,7 +336,42 @@ namespace Dram_Capstone.Data
                new WoodyFlavor()
                {
                    WoodyFlavorId = 1,
-
+                   Name = "Caramel"
+               },
+               new WoodyFlavor()
+               {
+                   WoodyFlavorId = 2,
+                   Name = "Creme Brulee"
+               },
+               new WoodyFlavor()
+               {
+                   WoodyFlavorId = 3,
+                   Name = "Caramel"
+               },
+               new WoodyFlavor()
+               {
+                   WoodyFlavorId = 4,
+                   Name = "Clove"
+               },
+               new WoodyFlavor()
+               {
+                   WoodyFlavorId = 5,
+                   Name = "Pepper"
+               },
+               new WoodyFlavor()
+               {
+                   WoodyFlavorId = 6,
+                   Name = "Cigar Box"
+               },
+               new WoodyFlavor()
+               {
+                   WoodyFlavorId = 7,
+                   Name = "Ginger"
+               },
+               new WoodyFlavor()
+               {
+                   WoodyFlavorId = 8,
+                   Name = "Liquorice"
                }
            );
            
