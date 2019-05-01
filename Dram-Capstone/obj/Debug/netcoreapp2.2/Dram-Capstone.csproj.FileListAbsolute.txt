@@ -35,3 +35,13 @@ C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Raz
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\Account\_ViewImports.g.cshtml.cs
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ValidationScriptsPartial.g.cshtml.cs
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewImports.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Whiskeys\Create.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Whiskeys\Delete.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Whiskeys\Details.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Whiskeys\Edit.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Whiskeys\Index.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Reviews\Create.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Reviews\Delete.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Reviews\Details.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Reviews\Edit.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Reviews\Index.g.cshtml.cs

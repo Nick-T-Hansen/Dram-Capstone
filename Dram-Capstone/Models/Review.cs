@@ -9,25 +9,14 @@ namespace Dram_Capstone.Models
         [Key]
         public int ReviewId { get; set; }
 
-        [Required]
+        
         [DataType(DataType.Date)]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Display(Name = "Date Reviewed")]
         public DateTime DateCreated { get; set; }
-        
-        [Required]
-        [Display(Name = "Distillery Name")]
-        public string Distillery { get; set; }
 
-        [Required]
-        [Display(Name = "Whiskey Review ID")]
-        public int WhiskeyReview_Id { get; set; }
-
-        [Required]
-        [Display(Name = "User Id")]
-        public string User_Id { get; set; }
-
-        public bool Favorite { get; set; }
+        [Display(Name = "Tasting Notes")]
+        public string TastingNotes { get; set; }
 
         [Required]
         [Range(1, 100,

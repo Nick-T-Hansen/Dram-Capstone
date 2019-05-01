@@ -290,11 +290,8 @@ namespace Dram_Capstone.Migrations
                 {
                     ReviewId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DateCreated = table.Column<DateTime>(nullable: false),
-                    Distillery = table.Column<string>(nullable: false),
-                    WhiskeyReview_Id = table.Column<int>(nullable: false),
-                    User_Id = table.Column<string>(nullable: false),
-                    Favorite = table.Column<bool>(nullable: false),
+                    DateCreated = table.Column<DateTime>(nullable: false, defaultValueSql: "GETDATE()"),
+                    TastingNotes = table.Column<string>(nullable: true),
                     ReviewScore = table.Column<int>(nullable: false),
                     WoodyFlavor_Id = table.Column<int>(nullable: false),
                     WineyFlavor_Id = table.Column<int>(nullable: false),
@@ -320,7 +317,126 @@ namespace Dram_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "FirstName", "LastName" },
-                values: new object[] { "cd87d503-d35c-465e-9f7c-3d2a4519203e", 0, "1ba85921-006e-4855-9583-c94d7f22fd30", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAEBjxI4gQDbxmRkBPcqm9wN9fiEY/6h6f2gUxdtLG0ntBcrfH5lLBDZtXmrV+OCFSHg==", null, false, "2806245c-0924-41d1-abc9-b6b7902c9165", false, null, "admin", "admin" });
+                values: new object[] { "3370043a-63ed-4f2c-95e9-feda341655df", 0, "7fbaaacf-4d85-47b4-aae3-b24ca549cfbc", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAEIVc794v/3ONSsZ+DatfTR9M3VRFatt3Eupq+6O82yyQtU47oD3mcqO+QJQiUuwBYQ==", null, false, "ba791ed6-4b77-4c84-94b7-898a14e5a518", false, null, "admin", "admin" });
+
+            migrationBuilder.InsertData(
+                table: "FragrantFlavor",
+                columns: new[] { "FragrantFlavorId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Lavender" },
+                    { 2, "Acetone" },
+                    { 3, "Pine" },
+                    { 4, "Honey" },
+                    { 5, "Beeswax" },
+                    { 6, "Rose" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "FruityFlavor",
+                columns: new[] { "FruityFlavorId", "Name" },
+                values: new object[,]
+                {
+                    { 6, "Canned Peaches" },
+                    { 5, "Marmalade" },
+                    { 4, "Orange" },
+                    { 7, "Raisins" },
+                    { 2, "Fig" },
+                    { 1, "Apple" },
+                    { 3, "Cherry" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "GrainyFlavor",
+                columns: new[] { "GrainyFlavorId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Coffee" },
+                    { 2, "Dried Hops" },
+                    { 3, "Malted Milk" },
+                    { 4, "Breakfast Cereal" },
+                    { 5, "Biscuits" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "GrassyFlavor",
+                columns: new[] { "GrassyFlavorId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Cut Grass" },
+                    { 2, "Green Sticks" },
+                    { 3, "Tobacco" },
+                    { 4, "Dried Herbs" },
+                    { 5, "Dried Tea Leaf" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "OffNoteFlavor",
+                columns: new[] { "OffNoteFlavorId", "Name" },
+                values: new object[,]
+                {
+                    { 6, "Rusty" },
+                    { 7, "Vinegar" },
+                    { 5, "Struck Matches" },
+                    { 4, "Leather" },
+                    { 3, "Fatty" },
+                    { 2, "Roast Meat" },
+                    { 1, "Earthy" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PeatyFlavor",
+                columns: new[] { "PeatyFlavorId", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Shellfish" },
+                    { 2, "Brine" },
+                    { 3, "Seaweed" },
+                    { 4, "Iodine" },
+                    { 5, "Mouthwash" },
+                    { 6, "Peat Smoke" },
+                    { 7, "Smoked Salmon" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Review",
+                columns: new[] { "ReviewId", "FragrantFlavor_Id", "FruityFlavor_Id", "GrainyFlavor_Id", "GrassyFlavor_Id", "OffNotesFlavor_Id", "PeatyFlavor_Id", "ReviewScore", "TastingNotes", "WhiskeyId", "WineyFlavor_Id", "WoodyFlavor_Id" },
+                values: new object[] { 1, 1, 1, 1, 1, 1, 1, 95, "lots of alcohol, very smokey, good neat", null, 1, 1 });
+
+            migrationBuilder.InsertData(
+                table: "Whiskey",
+                columns: new[] { "WhiskeyId", "ApplicationUserId", "Distillery", "Favorite", "Name", "User_Id", "WhiskeyReview_Id" },
+                values: new object[] { 1, null, "Ardbeg", false, "10 year", "3370043a-63ed-4f2c-95e9-feda341655df", 1 });
+
+            migrationBuilder.InsertData(
+                table: "WineyFlavor",
+                columns: new[] { "WineyFlavorId", "Name" },
+                values: new object[,]
+                {
+                    { 8, "Red Wine" },
+                    { 7, "Port" },
+                    { 6, "Sherry" },
+                    { 5, "Olive" },
+                    { 2, "Cream" },
+                    { 3, "Butter" },
+                    { 1, "Almond" },
+                    { 4, "Chocolate" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "WoodyFlavor",
+                columns: new[] { "WoodyFlavorId", "Name" },
+                values: new object[,]
+                {
+                    { 7, "Ginger" },
+                    { 1, "Caramel" },
+                    { 2, "Creme Brulee" },
+                    { 3, "Caramel" },
+                    { 4, "Clove" },
+                    { 5, "Pepper" },
+                    { 6, "Cigar Box" },
+                    { 8, "Liquorice" }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
