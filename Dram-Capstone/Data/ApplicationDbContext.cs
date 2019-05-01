@@ -29,6 +29,11 @@ namespace Dram_Capstone.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            // this is ensuring that the Donation that was created when the DB was built, gets the current Date
+            modelBuilder.Entity<Review>()
+                .Property(b => b.DateCreated)
+                .HasDefaultValueSql("GETDATE()");
             // Create a new user for Identity Framework
             ApplicationUser user = new ApplicationUser
             {
@@ -60,7 +65,7 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<Review>().HasData(
                 new Review()
                 {
-                    DateCreated = DateTime.Now,
+                    
                     ReviewId = 1,
                     TastingNotes = "lots of alcohol, very smokey, good neat",
                     ReviewScore = 95,

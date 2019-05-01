@@ -30,6 +30,38 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("FragrantFlavorId");
 
                     b.ToTable("FragrantFlavor");
+
+                    b.HasData(
+                        new
+                        {
+                            FragrantFlavorId = 1,
+                            Name = "Lavender"
+                        },
+                        new
+                        {
+                            FragrantFlavorId = 2,
+                            Name = "Acetone"
+                        },
+                        new
+                        {
+                            FragrantFlavorId = 3,
+                            Name = "Pine"
+                        },
+                        new
+                        {
+                            FragrantFlavorId = 4,
+                            Name = "Honey"
+                        },
+                        new
+                        {
+                            FragrantFlavorId = 5,
+                            Name = "Beeswax"
+                        },
+                        new
+                        {
+                            FragrantFlavorId = 6,
+                            Name = "Rose"
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.FruityFlavor", b =>
@@ -43,6 +75,43 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("FruityFlavorId");
 
                     b.ToTable("FruityFlavor");
+
+                    b.HasData(
+                        new
+                        {
+                            FruityFlavorId = 1,
+                            Name = "Apple"
+                        },
+                        new
+                        {
+                            FruityFlavorId = 2,
+                            Name = "Fig"
+                        },
+                        new
+                        {
+                            FruityFlavorId = 3,
+                            Name = "Cherry"
+                        },
+                        new
+                        {
+                            FruityFlavorId = 4,
+                            Name = "Orange"
+                        },
+                        new
+                        {
+                            FruityFlavorId = 5,
+                            Name = "Marmalade"
+                        },
+                        new
+                        {
+                            FruityFlavorId = 6,
+                            Name = "Canned Peaches"
+                        },
+                        new
+                        {
+                            FruityFlavorId = 7,
+                            Name = "Raisins"
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.GrainyFlavor", b =>
@@ -56,6 +125,33 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("GrainyFlavorId");
 
                     b.ToTable("GrainyFlavor");
+
+                    b.HasData(
+                        new
+                        {
+                            GrainyFlavorId = 1,
+                            Name = "Coffee"
+                        },
+                        new
+                        {
+                            GrainyFlavorId = 2,
+                            Name = "Dried Hops"
+                        },
+                        new
+                        {
+                            GrainyFlavorId = 3,
+                            Name = "Malted Milk"
+                        },
+                        new
+                        {
+                            GrainyFlavorId = 4,
+                            Name = "Breakfast Cereal"
+                        },
+                        new
+                        {
+                            GrainyFlavorId = 5,
+                            Name = "Biscuits"
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.GrassyFlavor", b =>
@@ -69,6 +165,33 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("GrassyFlavorId");
 
                     b.ToTable("GrassyFlavor");
+
+                    b.HasData(
+                        new
+                        {
+                            GrassyFlavorId = 1,
+                            Name = "Cut Grass"
+                        },
+                        new
+                        {
+                            GrassyFlavorId = 2,
+                            Name = "Green Sticks"
+                        },
+                        new
+                        {
+                            GrassyFlavorId = 3,
+                            Name = "Tobacco"
+                        },
+                        new
+                        {
+                            GrassyFlavorId = 4,
+                            Name = "Dried Herbs"
+                        },
+                        new
+                        {
+                            GrassyFlavorId = 5,
+                            Name = "Dried Tea Leaf"
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.OffNoteFlavor", b =>
@@ -82,6 +205,43 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("OffNoteFlavorId");
 
                     b.ToTable("OffNoteFlavor");
+
+                    b.HasData(
+                        new
+                        {
+                            OffNoteFlavorId = 1,
+                            Name = "Earthy"
+                        },
+                        new
+                        {
+                            OffNoteFlavorId = 2,
+                            Name = "Roast Meat"
+                        },
+                        new
+                        {
+                            OffNoteFlavorId = 3,
+                            Name = "Fatty"
+                        },
+                        new
+                        {
+                            OffNoteFlavorId = 4,
+                            Name = "Leather"
+                        },
+                        new
+                        {
+                            OffNoteFlavorId = 5,
+                            Name = "Struck Matches"
+                        },
+                        new
+                        {
+                            OffNoteFlavorId = 6,
+                            Name = "Rusty"
+                        },
+                        new
+                        {
+                            OffNoteFlavorId = 7,
+                            Name = "Vinegar"
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.PeatyFlavor", b =>
@@ -95,6 +255,43 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("PeatyFlavorId");
 
                     b.ToTable("PeatyFlavor");
+
+                    b.HasData(
+                        new
+                        {
+                            PeatyFlavorId = 1,
+                            Name = "Shellfish"
+                        },
+                        new
+                        {
+                            PeatyFlavorId = 2,
+                            Name = "Brine"
+                        },
+                        new
+                        {
+                            PeatyFlavorId = 3,
+                            Name = "Seaweed"
+                        },
+                        new
+                        {
+                            PeatyFlavorId = 4,
+                            Name = "Iodine"
+                        },
+                        new
+                        {
+                            PeatyFlavorId = 5,
+                            Name = "Mouthwash"
+                        },
+                        new
+                        {
+                            PeatyFlavorId = 6,
+                            Name = "Peat Smoke"
+                        },
+                        new
+                        {
+                            PeatyFlavorId = 7,
+                            Name = "Smoked Salmon"
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.Review", b =>
@@ -104,12 +301,8 @@ namespace Dram_Capstone.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("DateCreated")
-                        .ValueGeneratedOnAddOrUpdate();
-
-                    b.Property<string>("Distillery")
-                        .IsRequired();
-
-                    b.Property<bool>("Favorite");
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int>("FragrantFlavor_Id");
 
@@ -125,12 +318,9 @@ namespace Dram_Capstone.Migrations
 
                     b.Property<int>("ReviewScore");
 
-                    b.Property<string>("User_Id")
-                        .IsRequired();
+                    b.Property<string>("TastingNotes");
 
                     b.Property<int?>("WhiskeyId");
-
-                    b.Property<int>("WhiskeyReview_Id");
 
                     b.Property<int>("WineyFlavor_Id");
 
@@ -141,6 +331,23 @@ namespace Dram_Capstone.Migrations
                     b.HasIndex("WhiskeyId");
 
                     b.ToTable("Review");
+
+                    b.HasData(
+                        new
+                        {
+                            ReviewId = 1,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            FragrantFlavor_Id = 1,
+                            FruityFlavor_Id = 1,
+                            GrainyFlavor_Id = 1,
+                            GrassyFlavor_Id = 1,
+                            OffNotesFlavor_Id = 1,
+                            PeatyFlavor_Id = 1,
+                            ReviewScore = 95,
+                            TastingNotes = "lots of alcohol, very smokey, good neat",
+                            WineyFlavor_Id = 1,
+                            WoodyFlavor_Id = 1
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.Whiskey", b =>
@@ -169,6 +376,17 @@ namespace Dram_Capstone.Migrations
                     b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Whiskey");
+
+                    b.HasData(
+                        new
+                        {
+                            WhiskeyId = 1,
+                            Distillery = "Ardbeg",
+                            Favorite = false,
+                            Name = "10 year",
+                            User_Id = "3370043a-63ed-4f2c-95e9-feda341655df",
+                            WhiskeyReview_Id = 1
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.WineyFlavor", b =>
@@ -182,6 +400,48 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("WineyFlavorId");
 
                     b.ToTable("WineyFlavor");
+
+                    b.HasData(
+                        new
+                        {
+                            WineyFlavorId = 1,
+                            Name = "Almond"
+                        },
+                        new
+                        {
+                            WineyFlavorId = 2,
+                            Name = "Cream"
+                        },
+                        new
+                        {
+                            WineyFlavorId = 3,
+                            Name = "Butter"
+                        },
+                        new
+                        {
+                            WineyFlavorId = 4,
+                            Name = "Chocolate"
+                        },
+                        new
+                        {
+                            WineyFlavorId = 5,
+                            Name = "Olive"
+                        },
+                        new
+                        {
+                            WineyFlavorId = 6,
+                            Name = "Sherry"
+                        },
+                        new
+                        {
+                            WineyFlavorId = 7,
+                            Name = "Port"
+                        },
+                        new
+                        {
+                            WineyFlavorId = 8,
+                            Name = "Red Wine"
+                        });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.WoodyFlavor", b =>
@@ -195,6 +455,48 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("WoodyFlavorId");
 
                     b.ToTable("WoodyFlavor");
+
+                    b.HasData(
+                        new
+                        {
+                            WoodyFlavorId = 1,
+                            Name = "Caramel"
+                        },
+                        new
+                        {
+                            WoodyFlavorId = 2,
+                            Name = "Creme Brulee"
+                        },
+                        new
+                        {
+                            WoodyFlavorId = 3,
+                            Name = "Caramel"
+                        },
+                        new
+                        {
+                            WoodyFlavorId = 4,
+                            Name = "Clove"
+                        },
+                        new
+                        {
+                            WoodyFlavorId = 5,
+                            Name = "Pepper"
+                        },
+                        new
+                        {
+                            WoodyFlavorId = 6,
+                            Name = "Cigar Box"
+                        },
+                        new
+                        {
+                            WoodyFlavorId = 7,
+                            Name = "Ginger"
+                        },
+                        new
+                        {
+                            WoodyFlavorId = 8,
+                            Name = "Liquorice"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -382,16 +684,16 @@ namespace Dram_Capstone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "cd87d503-d35c-465e-9f7c-3d2a4519203e",
+                            Id = "3370043a-63ed-4f2c-95e9-feda341655df",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1ba85921-006e-4855-9583-c94d7f22fd30",
+                            ConcurrencyStamp = "7fbaaacf-4d85-47b4-aae3-b24ca549cfbc",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBjxI4gQDbxmRkBPcqm9wN9fiEY/6h6f2gUxdtLG0ntBcrfH5lLBDZtXmrV+OCFSHg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEIVc794v/3ONSsZ+DatfTR9M3VRFatt3Eupq+6O82yyQtU47oD3mcqO+QJQiUuwBYQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2806245c-0924-41d1-abc9-b6b7902c9165",
+                            SecurityStamp = "ba791ed6-4b77-4c84-94b7-898a14e5a518",
                             TwoFactorEnabled = false,
                             FirstName = "admin",
                             LastName = "admin"

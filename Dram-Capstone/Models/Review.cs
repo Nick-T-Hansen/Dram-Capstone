@@ -9,7 +9,7 @@ namespace Dram_Capstone.Models
         [Key]
         public int ReviewId { get; set; }
 
-        [Required]
+        
         [DataType(DataType.Date)]
         [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
         [Display(Name = "Date Reviewed")]
