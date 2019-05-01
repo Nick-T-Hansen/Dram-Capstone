@@ -26,6 +26,15 @@ namespace Dram_Capstone.Models
        
         public bool Favorite { get; set; }
 
+        [Display(Name = "Whiskey Entry")]
+        public string WhiskeyEntry
+        {
+            get
+            {
+                return Distillery + " " + Name;
+            }
+        }
+
         public virtual ICollection<Review> Reviews { get; set; }
     }
 }

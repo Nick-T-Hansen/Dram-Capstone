@@ -13,10 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Distillery)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(model => model.WhiskeyEntry)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Favorite)
@@ -28,10 +25,7 @@
 @foreach (var item in Model) {
             <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Distillery)
-            </td>
-            <td>
-                @Html.ActionLink(($"{item.Name}"), "Details", new { id = item.WhiskeyId })
+                @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", new { id = item.WhiskeyId })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Favorite)
