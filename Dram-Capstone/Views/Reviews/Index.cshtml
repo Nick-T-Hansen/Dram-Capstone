@@ -1,0 +1,95 @@
+﻿@model IEnumerable<Dram_Capstone.Models.Review>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateCreated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TastingNotes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReviewScore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WoodyFlavor_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WineyFlavor_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OffNotesFlavor_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FruityFlavor_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FragrantFlavor_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PeatyFlavor_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrainyFlavor_Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrassyFlavor_Id)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateCreated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TastingNotes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReviewScore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WoodyFlavor_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WineyFlavor_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OffNotesFlavor_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FruityFlavor_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FragrantFlavor_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PeatyFlavor_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrainyFlavor_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrassyFlavor_Id)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ReviewId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ReviewId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ReviewId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
