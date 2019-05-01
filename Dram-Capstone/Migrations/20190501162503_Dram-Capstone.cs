@@ -268,7 +268,7 @@ namespace Dram_Capstone.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: false),
                     Distillery = table.Column<string>(nullable: false),
-                    WhiskeyReview_Id = table.Column<int>(nullable: false),
+                    WhiskeyReview_Id = table.Column<int>(nullable: true),
                     User_Id = table.Column<string>(nullable: false),
                     Favorite = table.Column<bool>(nullable: false),
                     ApplicationUserId = table.Column<string>(nullable: true)
@@ -317,7 +317,7 @@ namespace Dram_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "FirstName", "LastName" },
-                values: new object[] { "3370043a-63ed-4f2c-95e9-feda341655df", 0, "7fbaaacf-4d85-47b4-aae3-b24ca549cfbc", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAEIVc794v/3ONSsZ+DatfTR9M3VRFatt3Eupq+6O82yyQtU47oD3mcqO+QJQiUuwBYQ==", null, false, "ba791ed6-4b77-4c84-94b7-898a14e5a518", false, null, "admin", "admin" });
+                values: new object[] { "f17ffaee-4be6-4626-827d-cfad97ac21fd", 0, "567148f4-a715-42e8-88fe-01973e08b01c", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAEKFRHJbHX8ibl+62D4/NRoP2oDJz1KmD50cMwMqcJgdD+KyFQ2LVL/4KQX/7Exo2nw==", null, false, "fd1370d9-2e83-453a-8a36-d8cce0d19b05", false, null, "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "FragrantFlavor",
@@ -406,7 +406,7 @@ namespace Dram_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "Whiskey",
                 columns: new[] { "WhiskeyId", "ApplicationUserId", "Distillery", "Favorite", "Name", "User_Id", "WhiskeyReview_Id" },
-                values: new object[] { 1, null, "Ardbeg", false, "10 year", "3370043a-63ed-4f2c-95e9-feda341655df", 1 });
+                values: new object[] { 1, null, "Ardbeg", false, "10 year", "f17ffaee-4be6-4626-827d-cfad97ac21fd", 1 });
 
             migrationBuilder.InsertData(
                 table: "WineyFlavor",

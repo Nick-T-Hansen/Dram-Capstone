@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dram_Capstone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190430211432_Dram-Capstone")]
+    [Migration("20190501162503_Dram-Capstone")]
     partial class DramCapstone
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -371,7 +371,7 @@ namespace Dram_Capstone.Migrations
                     b.Property<string>("User_Id")
                         .IsRequired();
 
-                    b.Property<int>("WhiskeyReview_Id");
+                    b.Property<int?>("WhiskeyReview_Id");
 
                     b.HasKey("WhiskeyId");
 
@@ -386,7 +386,7 @@ namespace Dram_Capstone.Migrations
                             Distillery = "Ardbeg",
                             Favorite = false,
                             Name = "10 year",
-                            User_Id = "3370043a-63ed-4f2c-95e9-feda341655df",
+                            User_Id = "f17ffaee-4be6-4626-827d-cfad97ac21fd",
                             WhiskeyReview_Id = 1
                         });
                 });
@@ -686,16 +686,16 @@ namespace Dram_Capstone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3370043a-63ed-4f2c-95e9-feda341655df",
+                            Id = "f17ffaee-4be6-4626-827d-cfad97ac21fd",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7fbaaacf-4d85-47b4-aae3-b24ca549cfbc",
+                            ConcurrencyStamp = "567148f4-a715-42e8-88fe-01973e08b01c",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIVc794v/3ONSsZ+DatfTR9M3VRFatt3Eupq+6O82yyQtU47oD3mcqO+QJQiUuwBYQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKFRHJbHX8ibl+62D4/NRoP2oDJz1KmD50cMwMqcJgdD+KyFQ2LVL/4KQX/7Exo2nw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ba791ed6-4b77-4c84-94b7-898a14e5a518",
+                            SecurityStamp = "fd1370d9-2e83-453a-8a36-d8cce0d19b05",
                             TwoFactorEnabled = false,
                             FirstName = "admin",
                             LastName = "admin"
