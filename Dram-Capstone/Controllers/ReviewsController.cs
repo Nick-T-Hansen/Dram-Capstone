@@ -7,17 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Dram_Capstone.Data;
 using Dram_Capstone.Models;
+using Microsoft.AspNetCore.Identity;
+using Dram_Capstone.Models.ReviewViewModels;
 
 namespace Dram_Capstone.Controllers
 {
     public class ReviewsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public ReviewsController(ApplicationDbContext context)
+        public ReviewsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
+
         }
+
+        private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
         // GET: Reviews
         public async Task<IActionResult> Index()
@@ -46,7 +53,116 @@ namespace Dram_Capstone.Controllers
         // GET: Reviews/Create
         public IActionResult Create()
         {
-            return View();
+            var FragrantFlavorData = _context.FragrantFlavor;
+            var FruityFlavorData = _context.FruityFlavor;
+            var GrainyFlavorData = _context.GrainyFlavor;
+            var GrassyFlavorData = _context.GrassyFlavor;
+            var OffNoteFlavorData = _context.OffNoteFlavor;
+            var PeatyFlavorData = _context.PeatyFlavor;
+            var WineyFlavorData = _context.WineyFlavor;
+            var WoodyFLavorData = _context.WoodyFlavor;
+
+            List<SelectListItem> FragrantFlavorList = new List<SelectListItem>();
+            List<SelectListItem> FruityFlavorList = new List<SelectListItem>();
+            List<SelectListItem> GrainyFlavorList = new List<SelectListItem>();
+            List<SelectListItem> GrassyFlavorList = new List<SelectListItem>();
+            List<SelectListItem> OffNoteFlavorList = new List<SelectListItem>();
+            List<SelectListItem> PeatyFlavorList = new List<SelectListItem>();
+            List<SelectListItem> WineyFlavorList = new List<SelectListItem>();
+            List<SelectListItem> WoodyFlavorList = new List<SelectListItem>();
+
+            foreach (var f in FragrantFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.FragrantFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                FragrantFlavorList.Add(li);
+            };
+
+            foreach (var f in FruityFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.FruityFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                FruityFlavorList.Add(li);
+            };
+
+            foreach (var f in GrainyFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.GrainyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                GrainyFlavorList.Add(li);
+            };
+
+            foreach (var f in GrassyFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.GrassyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                GrassyFlavorList.Add(li);
+            };
+
+            foreach (var f in OffNoteFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.OffNoteFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                OffNoteFlavorList.Add(li);
+            };
+
+            foreach (var f in PeatyFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.PeatyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                PeatyFlavorList.Add(li);
+            };
+
+            foreach (var f in WineyFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.WineyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                WineyFlavorList.Add(li);
+            };
+
+            foreach (var f in WoodyFLavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.WoodyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                WoodyFlavorList.Add(li);
+            };
+
+            ReviewCreateViewModel RCVM = new ReviewCreateViewModel();
+
+            RCVM.FragrantFlavors = FragrantFlavorList;
+            RCVM.FruityFlavors = FruityFlavorList;
+            RCVM.GrainyFlavors = GrainyFlavorList;
+            RCVM.GrassyFlavors = GrassyFlavorList;
+            RCVM.OffNoteFlavors = OffNoteFlavorList;
+            RCVM.PeatyFlavors = PeatyFlavorList;
+            RCVM.WineyFlavors = WineyFlavorList;
+            RCVM.WoodyFlavors = WoodyFlavorList;
+
+            return View(RCVM);
         }
 
         // POST: Reviews/Create
