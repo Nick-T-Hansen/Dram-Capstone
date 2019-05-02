@@ -26,9 +26,24 @@ namespace Dram_Capstone.Controllers
         private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
         // GET: Whiskeys
+        //Will be used to get all whiskey reviews from all users
+        /*
+        public async Task<IActionResult> AllUsersWhiskeys()
+        {
+            var applicationDbContext = _context.Whiskey;
+            return View(await _context.Whiskey.ToListAsync());
+        }
+        */
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Whiskey.ToListAsync());
+            //In order to access user specific information, the current user must be identified
+            var user = await GetCurrentUserAsync();
+
+            //the information from the database is received for the current user
+            var applicationDbContext = _context.Whiskey
+                .Where(p => p.User_Id == user.Id);
+
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Whiskeys/Details/5
