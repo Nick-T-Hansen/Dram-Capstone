@@ -304,15 +304,27 @@ namespace Dram_Capstone.Migrations
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GETDATE()");
 
+                    b.Property<int?>("FragrantFlavorId");
+
                     b.Property<int>("FragrantFlavor_Id");
+
+                    b.Property<int?>("FruityFlavorId");
 
                     b.Property<int>("FruityFlavor_Id");
 
+                    b.Property<int?>("GrainyFlavorId");
+
                     b.Property<int>("GrainyFlavor_Id");
+
+                    b.Property<int?>("GrassyFlavorId");
 
                     b.Property<int>("GrassyFlavor_Id");
 
+                    b.Property<int?>("OffNoteFlavorId");
+
                     b.Property<int>("OffNotesFlavor_Id");
+
+                    b.Property<int?>("PeatyFlavorId");
 
                     b.Property<int>("PeatyFlavor_Id");
 
@@ -320,15 +332,31 @@ namespace Dram_Capstone.Migrations
 
                     b.Property<string>("TastingNotes");
 
-                    b.Property<int?>("WhiskeyId");
+                    b.Property<int?>("WineyFlavorId");
 
                     b.Property<int>("WineyFlavor_Id");
+
+                    b.Property<int?>("WoodyFlavorId");
 
                     b.Property<int>("WoodyFlavor_Id");
 
                     b.HasKey("ReviewId");
 
-                    b.HasIndex("WhiskeyId");
+                    b.HasIndex("FragrantFlavorId");
+
+                    b.HasIndex("FruityFlavorId");
+
+                    b.HasIndex("GrainyFlavorId");
+
+                    b.HasIndex("GrassyFlavorId");
+
+                    b.HasIndex("OffNoteFlavorId");
+
+                    b.HasIndex("PeatyFlavorId");
+
+                    b.HasIndex("WineyFlavorId");
+
+                    b.HasIndex("WoodyFlavorId");
 
                     b.ToTable("Review");
 
@@ -366,6 +394,8 @@ namespace Dram_Capstone.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
+                    b.Property<int?>("ReviewId");
+
                     b.Property<string>("User_Id")
                         .IsRequired();
 
@@ -374,6 +404,8 @@ namespace Dram_Capstone.Migrations
                     b.HasKey("WhiskeyId");
 
                     b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("ReviewId");
 
                     b.ToTable("Whiskey");
 
@@ -384,7 +416,7 @@ namespace Dram_Capstone.Migrations
                             Distillery = "Ardbeg",
                             Favorite = false,
                             Name = "10 year",
-                            User_Id = "f17ffaee-4be6-4626-827d-cfad97ac21fd",
+                            User_Id = "fa07c441-1083-4583-83db-58e5ba0a40c4",
                             WhiskeyReview_Id = 1
                         });
                 });
@@ -684,16 +716,16 @@ namespace Dram_Capstone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f17ffaee-4be6-4626-827d-cfad97ac21fd",
+                            Id = "fa07c441-1083-4583-83db-58e5ba0a40c4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "567148f4-a715-42e8-88fe-01973e08b01c",
+                            ConcurrencyStamp = "a4aa4362-68e1-455a-b7e5-347619f7c4a6",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEKFRHJbHX8ibl+62D4/NRoP2oDJz1KmD50cMwMqcJgdD+KyFQ2LVL/4KQX/7Exo2nw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFCyxkyjmxatppNS2Qu9odY4n4/CxFjPE9GwHMHovmVOn3Krt8BW7TwrqJ2SeDwoSQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "fd1370d9-2e83-453a-8a36-d8cce0d19b05",
+                            SecurityStamp = "33863fa5-afcc-479f-aef0-4979cae315ae",
                             TwoFactorEnabled = false,
                             FirstName = "admin",
                             LastName = "admin"
@@ -702,9 +734,37 @@ namespace Dram_Capstone.Migrations
 
             modelBuilder.Entity("Dram_Capstone.Models.Review", b =>
                 {
-                    b.HasOne("Dram_Capstone.Models.Whiskey")
-                        .WithMany("Reviews")
-                        .HasForeignKey("WhiskeyId");
+                    b.HasOne("Dram_Capstone.Models.FragrantFlavor", "FragrantFlavor")
+                        .WithMany()
+                        .HasForeignKey("FragrantFlavorId");
+
+                    b.HasOne("Dram_Capstone.Models.FruityFlavor", "FruityFlavor")
+                        .WithMany()
+                        .HasForeignKey("FruityFlavorId");
+
+                    b.HasOne("Dram_Capstone.Models.GrainyFlavor", "GrainyFlavor")
+                        .WithMany()
+                        .HasForeignKey("GrainyFlavorId");
+
+                    b.HasOne("Dram_Capstone.Models.GrassyFlavor", "GrassyFlavor")
+                        .WithMany()
+                        .HasForeignKey("GrassyFlavorId");
+
+                    b.HasOne("Dram_Capstone.Models.OffNoteFlavor", "OffNoteFlavor")
+                        .WithMany()
+                        .HasForeignKey("OffNoteFlavorId");
+
+                    b.HasOne("Dram_Capstone.Models.PeatyFlavor", "PeatyFlavor")
+                        .WithMany()
+                        .HasForeignKey("PeatyFlavorId");
+
+                    b.HasOne("Dram_Capstone.Models.WineyFlavor", "WineyFlavor")
+                        .WithMany()
+                        .HasForeignKey("WineyFlavorId");
+
+                    b.HasOne("Dram_Capstone.Models.WoodyFlavor", "WoodyFlavor")
+                        .WithMany()
+                        .HasForeignKey("WoodyFlavorId");
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.Whiskey", b =>
@@ -712,6 +772,10 @@ namespace Dram_Capstone.Migrations
                     b.HasOne("Dram_Capstone.Models.ApplicationUser")
                         .WithMany("Whiskeys")
                         .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("Dram_Capstone.Models.Review", "Review")
+                        .WithMany()
+                        .HasForeignKey("ReviewId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

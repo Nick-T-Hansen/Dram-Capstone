@@ -32,8 +32,9 @@ namespace Dram_Capstone.Controllers
             {
                 return NotFound();
             }
-
+            // need the whiskey details and the review
             var whiskey = await _context.Whiskey
+                .Include(m => m.Review)
                 .FirstOrDefaultAsync(m => m.WhiskeyId == id);
             if (whiskey == null)
             {

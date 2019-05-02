@@ -261,30 +261,6 @@ namespace Dram_Capstone.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Whiskey",
-                columns: table => new
-                {
-                    WhiskeyId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: false),
-                    Distillery = table.Column<string>(nullable: false),
-                    WhiskeyReview_Id = table.Column<int>(nullable: true),
-                    User_Id = table.Column<string>(nullable: false),
-                    Favorite = table.Column<bool>(nullable: false),
-                    ApplicationUserId = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Whiskey", x => x.WhiskeyId);
-                    table.ForeignKey(
-                        name: "FK_Whiskey_AspNetUsers_ApplicationUserId",
-                        column: x => x.ApplicationUserId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Review",
                 columns: table => new
                 {
@@ -301,23 +277,103 @@ namespace Dram_Capstone.Migrations
                     PeatyFlavor_Id = table.Column<int>(nullable: false),
                     GrainyFlavor_Id = table.Column<int>(nullable: false),
                     GrassyFlavor_Id = table.Column<int>(nullable: false),
-                    WhiskeyId = table.Column<int>(nullable: true)
+                    FragrantFlavorId = table.Column<int>(nullable: true),
+                    FruityFlavorId = table.Column<int>(nullable: true),
+                    GrainyFlavorId = table.Column<int>(nullable: true),
+                    GrassyFlavorId = table.Column<int>(nullable: true),
+                    OffNoteFlavorId = table.Column<int>(nullable: true),
+                    PeatyFlavorId = table.Column<int>(nullable: true),
+                    WineyFlavorId = table.Column<int>(nullable: true),
+                    WoodyFlavorId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Review", x => x.ReviewId);
                     table.ForeignKey(
-                        name: "FK_Review_Whiskey_WhiskeyId",
-                        column: x => x.WhiskeyId,
-                        principalTable: "Whiskey",
-                        principalColumn: "WhiskeyId",
+                        name: "FK_Review_FragrantFlavor_FragrantFlavorId",
+                        column: x => x.FragrantFlavorId,
+                        principalTable: "FragrantFlavor",
+                        principalColumn: "FragrantFlavorId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Review_FruityFlavor_FruityFlavorId",
+                        column: x => x.FruityFlavorId,
+                        principalTable: "FruityFlavor",
+                        principalColumn: "FruityFlavorId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Review_GrainyFlavor_GrainyFlavorId",
+                        column: x => x.GrainyFlavorId,
+                        principalTable: "GrainyFlavor",
+                        principalColumn: "GrainyFlavorId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Review_GrassyFlavor_GrassyFlavorId",
+                        column: x => x.GrassyFlavorId,
+                        principalTable: "GrassyFlavor",
+                        principalColumn: "GrassyFlavorId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Review_OffNoteFlavor_OffNoteFlavorId",
+                        column: x => x.OffNoteFlavorId,
+                        principalTable: "OffNoteFlavor",
+                        principalColumn: "OffNoteFlavorId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Review_PeatyFlavor_PeatyFlavorId",
+                        column: x => x.PeatyFlavorId,
+                        principalTable: "PeatyFlavor",
+                        principalColumn: "PeatyFlavorId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Review_WineyFlavor_WineyFlavorId",
+                        column: x => x.WineyFlavorId,
+                        principalTable: "WineyFlavor",
+                        principalColumn: "WineyFlavorId",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Review_WoodyFlavor_WoodyFlavorId",
+                        column: x => x.WoodyFlavorId,
+                        principalTable: "WoodyFlavor",
+                        principalColumn: "WoodyFlavorId",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Whiskey",
+                columns: table => new
+                {
+                    WhiskeyId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: false),
+                    Distillery = table.Column<string>(nullable: false),
+                    WhiskeyReview_Id = table.Column<int>(nullable: true),
+                    User_Id = table.Column<string>(nullable: false),
+                    ReviewId = table.Column<int>(nullable: true),
+                    Favorite = table.Column<bool>(nullable: false),
+                    ApplicationUserId = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Whiskey", x => x.WhiskeyId);
+                    table.ForeignKey(
+                        name: "FK_Whiskey_AspNetUsers_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Whiskey_Review_ReviewId",
+                        column: x => x.ReviewId,
+                        principalTable: "Review",
+                        principalColumn: "ReviewId",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "FirstName", "LastName" },
-                values: new object[] { "f17ffaee-4be6-4626-827d-cfad97ac21fd", 0, "567148f4-a715-42e8-88fe-01973e08b01c", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAEKFRHJbHX8ibl+62D4/NRoP2oDJz1KmD50cMwMqcJgdD+KyFQ2LVL/4KQX/7Exo2nw==", null, false, "fd1370d9-2e83-453a-8a36-d8cce0d19b05", false, null, "admin", "admin" });
+                values: new object[] { "fa07c441-1083-4583-83db-58e5ba0a40c4", 0, "a4aa4362-68e1-455a-b7e5-347619f7c4a6", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAEFCyxkyjmxatppNS2Qu9odY4n4/CxFjPE9GwHMHovmVOn3Krt8BW7TwrqJ2SeDwoSQ==", null, false, "33863fa5-afcc-479f-aef0-4979cae315ae", false, null, "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "FragrantFlavor",
@@ -400,13 +456,13 @@ namespace Dram_Capstone.Migrations
 
             migrationBuilder.InsertData(
                 table: "Review",
-                columns: new[] { "ReviewId", "FragrantFlavor_Id", "FruityFlavor_Id", "GrainyFlavor_Id", "GrassyFlavor_Id", "OffNotesFlavor_Id", "PeatyFlavor_Id", "ReviewScore", "TastingNotes", "WhiskeyId", "WineyFlavor_Id", "WoodyFlavor_Id" },
-                values: new object[] { 1, 1, 1, 1, 1, 1, 1, 95, "lots of alcohol, very smokey, good neat", null, 1, 1 });
+                columns: new[] { "ReviewId", "FragrantFlavorId", "FragrantFlavor_Id", "FruityFlavorId", "FruityFlavor_Id", "GrainyFlavorId", "GrainyFlavor_Id", "GrassyFlavorId", "GrassyFlavor_Id", "OffNoteFlavorId", "OffNotesFlavor_Id", "PeatyFlavorId", "PeatyFlavor_Id", "ReviewScore", "TastingNotes", "WineyFlavorId", "WineyFlavor_Id", "WoodyFlavorId", "WoodyFlavor_Id" },
+                values: new object[] { 1, null, 1, null, 1, null, 1, null, 1, null, 1, null, 1, 95, "lots of alcohol, very smokey, good neat", null, 1, null, 1 });
 
             migrationBuilder.InsertData(
                 table: "Whiskey",
-                columns: new[] { "WhiskeyId", "ApplicationUserId", "Distillery", "Favorite", "Name", "User_Id", "WhiskeyReview_Id" },
-                values: new object[] { 1, null, "Ardbeg", false, "10 year", "f17ffaee-4be6-4626-827d-cfad97ac21fd", 1 });
+                columns: new[] { "WhiskeyId", "ApplicationUserId", "Distillery", "Favorite", "Name", "ReviewId", "User_Id", "WhiskeyReview_Id" },
+                values: new object[] { 1, null, "Ardbeg", false, "10 year", null, "fa07c441-1083-4583-83db-58e5ba0a40c4", 1 });
 
             migrationBuilder.InsertData(
                 table: "WineyFlavor",
@@ -478,14 +534,54 @@ namespace Dram_Capstone.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Review_WhiskeyId",
+                name: "IX_Review_FragrantFlavorId",
                 table: "Review",
-                column: "WhiskeyId");
+                column: "FragrantFlavorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_FruityFlavorId",
+                table: "Review",
+                column: "FruityFlavorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_GrainyFlavorId",
+                table: "Review",
+                column: "GrainyFlavorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_GrassyFlavorId",
+                table: "Review",
+                column: "GrassyFlavorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_OffNoteFlavorId",
+                table: "Review",
+                column: "OffNoteFlavorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_PeatyFlavorId",
+                table: "Review",
+                column: "PeatyFlavorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_WineyFlavorId",
+                table: "Review",
+                column: "WineyFlavorId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Review_WoodyFlavorId",
+                table: "Review",
+                column: "WoodyFlavorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Whiskey_ApplicationUserId",
                 table: "Whiskey",
                 column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Whiskey_ReviewId",
+                table: "Whiskey",
+                column: "ReviewId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -506,6 +602,18 @@ namespace Dram_Capstone.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Whiskey");
+
+            migrationBuilder.DropTable(
+                name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Review");
+
+            migrationBuilder.DropTable(
                 name: "FragrantFlavor");
 
             migrationBuilder.DropTable(
@@ -524,22 +632,10 @@ namespace Dram_Capstone.Migrations
                 name: "PeatyFlavor");
 
             migrationBuilder.DropTable(
-                name: "Review");
-
-            migrationBuilder.DropTable(
                 name: "WineyFlavor");
 
             migrationBuilder.DropTable(
                 name: "WoodyFlavor");
-
-            migrationBuilder.DropTable(
-                name: "AspNetRoles");
-
-            migrationBuilder.DropTable(
-                name: "Whiskey");
-
-            migrationBuilder.DropTable(
-                name: "AspNetUsers");
         }
     }
 }

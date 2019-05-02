@@ -23,6 +23,8 @@ namespace Dram_Capstone.Models
         [Required]
         [Display(Name = "User Id")]
         public string User_Id { get; set; }
+
+        public Review Review { get; set; }
        
         public bool Favorite { get; set; }
 
@@ -34,7 +36,5 @@ namespace Dram_Capstone.Models
                 return Distillery + " " + Name;
             }
         }
-
-        public virtual ICollection<Review> Reviews { get; set; }
     }
 }
