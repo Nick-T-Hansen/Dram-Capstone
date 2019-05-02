@@ -23,10 +23,10 @@
             @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.WhiskeyReview_Id)
+            @Html.DisplayNameFor(model => model.Review_Id)
         </dt>
         <dd class="col-sm-10">
-            @if (Model.WhiskeyReview_Id != null)
+            @if (Model.Review_Id != null)
             {
                 @Html.DisplayFor(model => model.Review.DateCreated)
                 @Html.DisplayFor(model => model.Review.ReviewScore)

@@ -58,7 +58,7 @@ namespace Dram_Capstone.Data
                     Name = "10 year",
                     User_Id = user.Id,
                     Favorite = false,
-                    WhiskeyReview_Id = 1
+                    Review_Id = 1
                 }
             );
 
@@ -66,7 +66,7 @@ namespace Dram_Capstone.Data
                 new Review()
                 {
                     
-                    ReviewId = 1,
+                    Review_Id = 1,
                     TastingNotes = "lots of alcohol, very smokey, good neat",
                     ReviewScore = 95,
                     WoodyFlavor_Id = 1,
@@ -74,7 +74,7 @@ namespace Dram_Capstone.Data
                     FruityFlavor_Id = 1,
                     GrainyFlavor_Id = 1,
                     GrassyFlavor_Id = 1,
-                    OffNotesFlavor_Id = 1,
+                    OffNoteFlavor_Id = 1,
                     PeatyFlavor_Id = 1,
                     WineyFlavor_Id = 1
                 }
@@ -84,34 +84,34 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<FragrantFlavor>().HasData(
                 new FragrantFlavor()
                 {
-                    FragrantFlavorId = 1,
+                    FragrantFlavor_Id = 1,
                     Name = "Lavender"
                 },
                 new FragrantFlavor()
                 {
-                    FragrantFlavorId = 2,
+                    FragrantFlavor_Id = 2,
                     Name = "Acetone"
                 },
                 new FragrantFlavor()
                 {
-                    FragrantFlavorId = 3,
+                    FragrantFlavor_Id = 3,
                     Name = "Pine"
                 },
 
                 new FragrantFlavor()
                 {
-                    FragrantFlavorId = 4,
+                    FragrantFlavor_Id = 4,
                     Name = "Honey"
                 },
 
                 new FragrantFlavor()
                 {
-                    FragrantFlavorId = 5,
+                    FragrantFlavor_Id = 5,
                     Name = "Beeswax"
                 },
                 new FragrantFlavor()
                 {
-                    FragrantFlavorId = 6,
+                    FragrantFlavor_Id = 6,
                     Name = "Rose"
                 }
 
@@ -119,43 +119,43 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<FruityFlavor>().HasData(
                 new FruityFlavor()
                 {
-                    FruityFlavorId = 1,
+                    FruityFlavor_Id = 1,
                     Name = "Apple"
                 },
 
                 new FruityFlavor()
                 {
-                    FruityFlavorId = 2,
+                    FruityFlavor_Id = 2,
                     Name = "Fig"
                 },
 
                 new FruityFlavor()
                 {
-                    FruityFlavorId = 3,
+                    FruityFlavor_Id = 3,
                     Name = "Cherry"
                 },
 
                 new FruityFlavor()
                 {
-                    FruityFlavorId = 4,
+                    FruityFlavor_Id = 4,
                     Name = "Orange"
                 },
 
                 new FruityFlavor()
                 {
-                    FruityFlavorId = 5,
+                    FruityFlavor_Id = 5,
                     Name = "Marmalade"
                 },
 
                 new FruityFlavor()
                 {
-                    FruityFlavorId = 6,
+                    FruityFlavor_Id = 6,
                     Name = "Canned Peaches"
                 },
 
                 new FruityFlavor()
                 {
-                    FruityFlavorId = 7,
+                    FruityFlavor_Id = 7,
                     Name = "Raisins"
                 }
             );
@@ -163,27 +163,27 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<GrainyFlavor>().HasData(
                 new GrainyFlavor()
                 {
-                    GrainyFlavorId = 1,
+                    GrainyFlavor_Id = 1,
                     Name = "Coffee"
                 },
                 new GrainyFlavor()
                 {
-                    GrainyFlavorId = 2,
+                    GrainyFlavor_Id = 2,
                     Name = "Dried Hops"
                 },
                 new GrainyFlavor()
                 {
-                    GrainyFlavorId = 3,
+                    GrainyFlavor_Id = 3,
                     Name = "Malted Milk"
                 },
                 new GrainyFlavor()
                 {
-                    GrainyFlavorId = 4,
+                    GrainyFlavor_Id = 4,
                     Name = "Breakfast Cereal"
                 },
                 new GrainyFlavor()
                 {
-                    GrainyFlavorId = 5,
+                    GrainyFlavor_Id = 5,
                     Name = "Biscuits"
                 }
             );
@@ -191,27 +191,27 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<GrassyFlavor>().HasData(
                new GrassyFlavor()
                {
-                   GrassyFlavorId = 1,
+                   GrassyFlavor_Id = 1,
                    Name = "Cut Grass"
                },
                new GrassyFlavor()
                {
-                   GrassyFlavorId = 2,
+                   GrassyFlavor_Id = 2,
                    Name = "Green Sticks"
                },
                new GrassyFlavor()
                {
-                   GrassyFlavorId = 3,
+                   GrassyFlavor_Id = 3,
                    Name = "Tobacco"
                },
                new GrassyFlavor()
                {
-                   GrassyFlavorId = 4,
+                   GrassyFlavor_Id = 4,
                    Name = "Dried Herbs"
                },
                new GrassyFlavor()
                {
-                   GrassyFlavorId = 5,
+                   GrassyFlavor_Id = 5,
                    Name = "Dried Tea Leaf"
                }
            );
@@ -219,37 +219,37 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<OffNoteFlavor>().HasData(
                new OffNoteFlavor()
                {
-                   OffNoteFlavorId = 1,
+                   OffNoteFlavor_Id = 1,
                    Name = "Earthy",
                },
                new OffNoteFlavor()
                {
-                   OffNoteFlavorId = 2,
+                   OffNoteFlavor_Id = 2,
                    Name = "Roast Meat",
                },
                new OffNoteFlavor()
                {
-                   OffNoteFlavorId = 3,
+                   OffNoteFlavor_Id = 3,
                    Name = "Fatty",
                },
                new OffNoteFlavor()
                {
-                   OffNoteFlavorId = 4,
+                   OffNoteFlavor_Id = 4,
                    Name = "Leather",
                },
                new OffNoteFlavor()
                {
-                   OffNoteFlavorId = 5,
+                   OffNoteFlavor_Id = 5,
                    Name = "Struck Matches",
                },
                new OffNoteFlavor()
                {
-                   OffNoteFlavorId = 6,
+                   OffNoteFlavor_Id = 6,
                    Name = "Rusty",
                },
                new OffNoteFlavor()
                {
-                   OffNoteFlavorId = 7,
+                   OffNoteFlavor_Id = 7,
                    Name = "Vinegar",
                }
              
@@ -258,37 +258,37 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<PeatyFlavor>().HasData(
                new PeatyFlavor()
                {
-                   PeatyFlavorId = 1,
+                   PeatyFlavor_Id = 1,
                    Name = "Shellfish"
                },
                 new PeatyFlavor()
                 {
-                    PeatyFlavorId = 2,
+                    PeatyFlavor_Id = 2,
                     Name = "Brine"
                 },
                 new PeatyFlavor()
                 {
-                    PeatyFlavorId = 3,
+                    PeatyFlavor_Id = 3,
                     Name = "Seaweed"
                 },
                 new PeatyFlavor()
                 {
-                    PeatyFlavorId = 4,
+                    PeatyFlavor_Id = 4,
                     Name = "Iodine"
                 },
                 new PeatyFlavor()
                 {
-                    PeatyFlavorId = 5,
+                    PeatyFlavor_Id = 5,
                     Name = "Mouthwash"
                 },
                 new PeatyFlavor()
                 {
-                    PeatyFlavorId = 6,
+                    PeatyFlavor_Id = 6,
                     Name = "Peat Smoke"
                 },
                 new PeatyFlavor()
                 {
-                    PeatyFlavorId = 7,
+                    PeatyFlavor_Id = 7,
                     Name = "Smoked Salmon"
                 }
            );
@@ -296,42 +296,42 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<WineyFlavor>().HasData(
                 new WineyFlavor()
                 {
-                    WineyFlavorId = 1,
+                    WineyFlavor_Id = 1,
                     Name = "Almond"
                 },
                 new WineyFlavor()
                 {
-                    WineyFlavorId = 2,
+                    WineyFlavor_Id = 2,
                     Name = "Cream"
                 },
                 new WineyFlavor()
                 {
-                    WineyFlavorId = 3,
+                    WineyFlavor_Id = 3,
                     Name = "Butter"
                 },
                 new WineyFlavor()
                 {
-                    WineyFlavorId = 4,
+                    WineyFlavor_Id = 4,
                     Name = "Chocolate"
                 },
                 new WineyFlavor()
                 {
-                    WineyFlavorId = 5,
+                    WineyFlavor_Id = 5,
                     Name = "Olive"
                 },
                 new WineyFlavor()
                 {
-                    WineyFlavorId = 6,
+                    WineyFlavor_Id = 6,
                     Name = "Sherry"
                 },
                 new WineyFlavor()
                 {
-                    WineyFlavorId = 7,
+                    WineyFlavor_Id = 7,
                     Name = "Port"
                 },
                 new WineyFlavor()
                 {
-                    WineyFlavorId = 8,
+                    WineyFlavor_Id = 8,
                     Name = "Red Wine"
                 }
 
@@ -340,42 +340,42 @@ namespace Dram_Capstone.Data
             modelBuilder.Entity<WoodyFlavor>().HasData(
                new WoodyFlavor()
                {
-                   WoodyFlavorId = 1,
+                   WoodyFlavor_Id = 1,
                    Name = "Caramel"
                },
                new WoodyFlavor()
                {
-                   WoodyFlavorId = 2,
+                   WoodyFlavor_Id = 2,
                    Name = "Creme Brulee"
                },
                new WoodyFlavor()
                {
-                   WoodyFlavorId = 3,
+                   WoodyFlavor_Id = 3,
                    Name = "Caramel"
                },
                new WoodyFlavor()
                {
-                   WoodyFlavorId = 4,
+                   WoodyFlavor_Id = 4,
                    Name = "Clove"
                },
                new WoodyFlavor()
                {
-                   WoodyFlavorId = 5,
+                   WoodyFlavor_Id = 5,
                    Name = "Pepper"
                },
                new WoodyFlavor()
                {
-                   WoodyFlavorId = 6,
+                   WoodyFlavor_Id = 6,
                    Name = "Cigar Box"
                },
                new WoodyFlavor()
                {
-                   WoodyFlavorId = 7,
+                   WoodyFlavor_Id = 7,
                    Name = "Ginger"
                },
                new WoodyFlavor()
                {
-                   WoodyFlavorId = 8,
+                   WoodyFlavor_Id = 8,
                    Name = "Liquorice"
                }
            );

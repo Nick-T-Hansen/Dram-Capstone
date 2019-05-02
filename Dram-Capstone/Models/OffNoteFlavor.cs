@@ -9,7 +9,7 @@ namespace Dram_Capstone.Models
     public class OffNoteFlavor
     {
         [Key]
-        public int OffNoteFlavorId { get; set; }
+        public int OffNoteFlavor_Id { get; set; }
 
         public string Name { get; set; }
     }

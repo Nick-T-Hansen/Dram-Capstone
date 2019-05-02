@@ -34,7 +34,7 @@ namespace Dram_Capstone.Controllers
             }
 
             var review = await _context.Review
-                .FirstOrDefaultAsync(m => m.ReviewId == id);
+                .FirstOrDefaultAsync(m => m.Review_Id == id);
             if (review == null)
             {
                 return NotFound();
@@ -54,14 +54,16 @@ namespace Dram_Capstone.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ReviewId,DateCreated,TastingNotes,ReviewScore,WoodyFlavor_Id,WineyFlavor_Id,OffNotesFlavor_Id,FruityFlavor_Id,FragrantFlavor_Id,PeatyFlavor_Id,GrainyFlavor_Id,GrassyFlavor_Id")] Review review)
+        public async Task<IActionResult> Create([Bind("Review_Id,DateCreated,TastingNotes,ReviewScore,WoodyFlavor_Id,WineyFlavor_Id,OffNoteFlavor_Id,FruityFlavor_Id,FragrantFlavor_Id,PeatyFlavor_Id,GrainyFlavor_Id,GrassyFlavor_Id")] Review review)
         {
             if (ModelState.IsValid)
             {
+
                 _context.Add(review);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            
             return View(review);
         }
 
@@ -86,9 +88,9 @@ namespace Dram_Capstone.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ReviewId,DateCreated,TastingNotes,ReviewScore,WoodyFlavor_Id,WineyFlavor_Id,OffNotesFlavor_Id,FruityFlavor_Id,FragrantFlavor_Id,PeatyFlavor_Id,GrainyFlavor_Id,GrassyFlavor_Id")] Review review)
+        public async Task<IActionResult> Edit(int id, [Bind("Review_Id,DateCreated,TastingNotes,ReviewScore,WoodyFlavor_Id,WineyFlavor_Id,OffNoteFlavor_Id,FruityFlavor_Id,FragrantFlavor_Id,PeatyFlavor_Id,GrainyFlavor_Id,GrassyFlavor_Id")] Review review)
         {
-            if (id != review.ReviewId)
+            if (id != review.Review_Id)
             {
                 return NotFound();
             }
@@ -102,7 +104,7 @@ namespace Dram_Capstone.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ReviewExists(review.ReviewId))
+                    if (!ReviewExists(review.Review_Id))
                     {
                         return NotFound();
                     }
@@ -125,7 +127,7 @@ namespace Dram_Capstone.Controllers
             }
 
             var review = await _context.Review
-                .FirstOrDefaultAsync(m => m.ReviewId == id);
+                .FirstOrDefaultAsync(m => m.Review_Id == id);
             if (review == null)
             {
                 return NotFound();
@@ -147,7 +149,7 @@ namespace Dram_Capstone.Controllers
 
         private bool ReviewExists(int id)
         {
-            return _context.Review.Any(e => e.ReviewId == id);
+            return _context.Review.Any(e => e.Review_Id == id);
         }
     }
 }

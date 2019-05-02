@@ -18,7 +18,7 @@ namespace Dram_Capstone.Models
 
         
         [Display(Name = "Whiskey Review Id")]
-        public int? WhiskeyReview_Id { get; set; }
+        public int? Review_Id { get; set; }
 
         [Required]
         [Display(Name = "User Id")]

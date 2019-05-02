@@ -7,7 +7,7 @@ namespace Dram_Capstone.Models
     public class Review
     {
         [Key]
-        public int ReviewId { get; set; }
+        public int Review_Id { get; set; }
 
         
         [DataType(DataType.Date)]
@@ -31,7 +31,7 @@ namespace Dram_Capstone.Models
         public int WineyFlavor_Id { get; set; }
 
         [Display(Name = "Off Notes Descriptor")]
-        public int OffNotesFlavor_Id { get; set; }
+        public int OffNoteFlavor_Id { get; set; }
 
         [Display(Name = "Fruity Descriptor")]
         public int FruityFlavor_Id { get; set; }

@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.WineyFlavor_Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OffNotesFlavor_Id)
+                @Html.DisplayNameFor(model => model.OffNoteFlavor_Id)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.FruityFlavor_Id)
@@ -67,7 +67,7 @@
                 @Html.DisplayFor(modelItem => item.WineyFlavor_Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.OffNotesFlavor_Id)
+                @Html.DisplayFor(modelItem => item.OffNoteFlavor_Id)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FruityFlavor_Id)
@@ -85,9 +85,9 @@
                 @Html.DisplayFor(modelItem => item.GrassyFlavor_Id)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ReviewId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ReviewId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ReviewId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Review_Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Review_Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Review_Id">Delete</a>
             </td>
         </tr>
 }

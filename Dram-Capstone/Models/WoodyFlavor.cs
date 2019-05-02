@@ -9,7 +9,7 @@ namespace Dram_Capstone.Models
     public class WoodyFlavor
     {
         [Key]
-        public int WoodyFlavorId { get; set; }
+        public int WoodyFlavor_Id { get; set; }
 
         public string Name { get; set; }
     }
