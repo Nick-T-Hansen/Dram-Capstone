@@ -7,17 +7,23 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Dram_Capstone.Data;
 using Dram_Capstone.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace Dram_Capstone.Controllers
 {
     public class WhiskeysController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public WhiskeysController(ApplicationDbContext context)
+        public WhiskeysController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
+           
         }
+
+        private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
         // GET: Whiskeys
         public async Task<IActionResult> Index()
@@ -32,8 +38,16 @@ namespace Dram_Capstone.Controllers
             {
                 return NotFound();
             }
-
+            // need the whiskey details and the review
             var whiskey = await _context.Whiskey
+                .Include(m => m.Review)
+                .Include(m => m.Review.FragrantFlavor)
+                .Include(m => m.Review.FruityFlavor)
+                .Include(m => m.Review.GrainyFlavor)
+                .Include(m => m.Review.GrassyFlavor)
+                .Include(m => m.Review.PeatyFlavor)
+                .Include(m => m.Review.WineyFlavor)
+                .Include(m => m.Review.WoodyFlavor)
                 .FirstOrDefaultAsync(m => m.WhiskeyId == id);
             if (whiskey == null)
             {
@@ -54,13 +68,20 @@ namespace Dram_Capstone.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("WhiskeyId,Name,Distillery,WhiskeyReview_Id,User_Id,Favorite")] Whiskey whiskey)
+        public async Task<IActionResult> Create([Bind("WhiskeyId,Name,Distillery,Review_Id,User_Id,Favorite")] Whiskey whiskey)
         {
+
+            ModelState.Remove("User_Id");
+            ModelState.Remove("User");
+            var user = await GetCurrentUserAsync();
+            
+
             if (ModelState.IsValid)
             {
+                whiskey.User_Id = user.Id;
                 _context.Add(whiskey);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Index");
             }
             return View(whiskey);
         }
@@ -86,7 +107,7 @@ namespace Dram_Capstone.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("WhiskeyId,Name,Distillery,WhiskeyReview_Id,User_Id,Favorite")] Whiskey whiskey)
+        public async Task<IActionResult> Edit(int id, [Bind("WhiskeyId,Name,Distillery,Review_Id,User_Id,Favorite")] Whiskey whiskey)
         {
             if (id != whiskey.WhiskeyId)
             {

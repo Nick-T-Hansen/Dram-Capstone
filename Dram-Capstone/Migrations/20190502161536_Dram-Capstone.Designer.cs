@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Dram_Capstone.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20190430211432_Dram-Capstone")]
+    [Migration("20190502161536_Dram-Capstone")]
     partial class DramCapstone
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,282 +23,282 @@ namespace Dram_Capstone.Migrations
 
             modelBuilder.Entity("Dram_Capstone.Models.FragrantFlavor", b =>
                 {
-                    b.Property<int>("FragrantFlavorId")
+                    b.Property<int>("FragrantFlavor_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("FragrantFlavorId");
+                    b.HasKey("FragrantFlavor_Id");
 
                     b.ToTable("FragrantFlavor");
 
                     b.HasData(
                         new
                         {
-                            FragrantFlavorId = 1,
+                            FragrantFlavor_Id = 1,
                             Name = "Lavender"
                         },
                         new
                         {
-                            FragrantFlavorId = 2,
+                            FragrantFlavor_Id = 2,
                             Name = "Acetone"
                         },
                         new
                         {
-                            FragrantFlavorId = 3,
+                            FragrantFlavor_Id = 3,
                             Name = "Pine"
                         },
                         new
                         {
-                            FragrantFlavorId = 4,
+                            FragrantFlavor_Id = 4,
                             Name = "Honey"
                         },
                         new
                         {
-                            FragrantFlavorId = 5,
+                            FragrantFlavor_Id = 5,
                             Name = "Beeswax"
                         },
                         new
                         {
-                            FragrantFlavorId = 6,
+                            FragrantFlavor_Id = 6,
                             Name = "Rose"
                         });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.FruityFlavor", b =>
                 {
-                    b.Property<int>("FruityFlavorId")
+                    b.Property<int>("FruityFlavor_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("FruityFlavorId");
+                    b.HasKey("FruityFlavor_Id");
 
                     b.ToTable("FruityFlavor");
 
                     b.HasData(
                         new
                         {
-                            FruityFlavorId = 1,
+                            FruityFlavor_Id = 1,
                             Name = "Apple"
                         },
                         new
                         {
-                            FruityFlavorId = 2,
+                            FruityFlavor_Id = 2,
                             Name = "Fig"
                         },
                         new
                         {
-                            FruityFlavorId = 3,
+                            FruityFlavor_Id = 3,
                             Name = "Cherry"
                         },
                         new
                         {
-                            FruityFlavorId = 4,
+                            FruityFlavor_Id = 4,
                             Name = "Orange"
                         },
                         new
                         {
-                            FruityFlavorId = 5,
+                            FruityFlavor_Id = 5,
                             Name = "Marmalade"
                         },
                         new
                         {
-                            FruityFlavorId = 6,
+                            FruityFlavor_Id = 6,
                             Name = "Canned Peaches"
                         },
                         new
                         {
-                            FruityFlavorId = 7,
+                            FruityFlavor_Id = 7,
                             Name = "Raisins"
                         });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.GrainyFlavor", b =>
                 {
-                    b.Property<int>("GrainyFlavorId")
+                    b.Property<int>("GrainyFlavor_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("GrainyFlavorId");
+                    b.HasKey("GrainyFlavor_Id");
 
                     b.ToTable("GrainyFlavor");
 
                     b.HasData(
                         new
                         {
-                            GrainyFlavorId = 1,
+                            GrainyFlavor_Id = 1,
                             Name = "Coffee"
                         },
                         new
                         {
-                            GrainyFlavorId = 2,
+                            GrainyFlavor_Id = 2,
                             Name = "Dried Hops"
                         },
                         new
                         {
-                            GrainyFlavorId = 3,
+                            GrainyFlavor_Id = 3,
                             Name = "Malted Milk"
                         },
                         new
                         {
-                            GrainyFlavorId = 4,
+                            GrainyFlavor_Id = 4,
                             Name = "Breakfast Cereal"
                         },
                         new
                         {
-                            GrainyFlavorId = 5,
+                            GrainyFlavor_Id = 5,
                             Name = "Biscuits"
                         });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.GrassyFlavor", b =>
                 {
-                    b.Property<int>("GrassyFlavorId")
+                    b.Property<int>("GrassyFlavor_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("GrassyFlavorId");
+                    b.HasKey("GrassyFlavor_Id");
 
                     b.ToTable("GrassyFlavor");
 
                     b.HasData(
                         new
                         {
-                            GrassyFlavorId = 1,
+                            GrassyFlavor_Id = 1,
                             Name = "Cut Grass"
                         },
                         new
                         {
-                            GrassyFlavorId = 2,
+                            GrassyFlavor_Id = 2,
                             Name = "Green Sticks"
                         },
                         new
                         {
-                            GrassyFlavorId = 3,
+                            GrassyFlavor_Id = 3,
                             Name = "Tobacco"
                         },
                         new
                         {
-                            GrassyFlavorId = 4,
+                            GrassyFlavor_Id = 4,
                             Name = "Dried Herbs"
                         },
                         new
                         {
-                            GrassyFlavorId = 5,
+                            GrassyFlavor_Id = 5,
                             Name = "Dried Tea Leaf"
                         });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.OffNoteFlavor", b =>
                 {
-                    b.Property<int>("OffNoteFlavorId")
+                    b.Property<int>("OffNoteFlavor_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("OffNoteFlavorId");
+                    b.HasKey("OffNoteFlavor_Id");
 
                     b.ToTable("OffNoteFlavor");
 
                     b.HasData(
                         new
                         {
-                            OffNoteFlavorId = 1,
+                            OffNoteFlavor_Id = 1,
                             Name = "Earthy"
                         },
                         new
                         {
-                            OffNoteFlavorId = 2,
+                            OffNoteFlavor_Id = 2,
                             Name = "Roast Meat"
                         },
                         new
                         {
-                            OffNoteFlavorId = 3,
+                            OffNoteFlavor_Id = 3,
                             Name = "Fatty"
                         },
                         new
                         {
-                            OffNoteFlavorId = 4,
+                            OffNoteFlavor_Id = 4,
                             Name = "Leather"
                         },
                         new
                         {
-                            OffNoteFlavorId = 5,
+                            OffNoteFlavor_Id = 5,
                             Name = "Struck Matches"
                         },
                         new
                         {
-                            OffNoteFlavorId = 6,
+                            OffNoteFlavor_Id = 6,
                             Name = "Rusty"
                         },
                         new
                         {
-                            OffNoteFlavorId = 7,
+                            OffNoteFlavor_Id = 7,
                             Name = "Vinegar"
                         });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.PeatyFlavor", b =>
                 {
-                    b.Property<int>("PeatyFlavorId")
+                    b.Property<int>("PeatyFlavor_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("PeatyFlavorId");
+                    b.HasKey("PeatyFlavor_Id");
 
                     b.ToTable("PeatyFlavor");
 
                     b.HasData(
                         new
                         {
-                            PeatyFlavorId = 1,
+                            PeatyFlavor_Id = 1,
                             Name = "Shellfish"
                         },
                         new
                         {
-                            PeatyFlavorId = 2,
+                            PeatyFlavor_Id = 2,
                             Name = "Brine"
                         },
                         new
                         {
-                            PeatyFlavorId = 3,
+                            PeatyFlavor_Id = 3,
                             Name = "Seaweed"
                         },
                         new
                         {
-                            PeatyFlavorId = 4,
+                            PeatyFlavor_Id = 4,
                             Name = "Iodine"
                         },
                         new
                         {
-                            PeatyFlavorId = 5,
+                            PeatyFlavor_Id = 5,
                             Name = "Mouthwash"
                         },
                         new
                         {
-                            PeatyFlavorId = 6,
+                            PeatyFlavor_Id = 6,
                             Name = "Peat Smoke"
                         },
                         new
                         {
-                            PeatyFlavorId = 7,
+                            PeatyFlavor_Id = 7,
                             Name = "Smoked Salmon"
                         });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.Review", b =>
                 {
-                    b.Property<int>("ReviewId")
+                    b.Property<int>("Review_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -314,7 +314,7 @@ namespace Dram_Capstone.Migrations
 
                     b.Property<int>("GrassyFlavor_Id");
 
-                    b.Property<int>("OffNotesFlavor_Id");
+                    b.Property<int>("OffNoteFlavor_Id");
 
                     b.Property<int>("PeatyFlavor_Id");
 
@@ -322,28 +322,40 @@ namespace Dram_Capstone.Migrations
 
                     b.Property<string>("TastingNotes");
 
-                    b.Property<int?>("WhiskeyId");
-
                     b.Property<int>("WineyFlavor_Id");
 
                     b.Property<int>("WoodyFlavor_Id");
 
-                    b.HasKey("ReviewId");
+                    b.HasKey("Review_Id");
 
-                    b.HasIndex("WhiskeyId");
+                    b.HasIndex("FragrantFlavor_Id");
+
+                    b.HasIndex("FruityFlavor_Id");
+
+                    b.HasIndex("GrainyFlavor_Id");
+
+                    b.HasIndex("GrassyFlavor_Id");
+
+                    b.HasIndex("OffNoteFlavor_Id");
+
+                    b.HasIndex("PeatyFlavor_Id");
+
+                    b.HasIndex("WineyFlavor_Id");
+
+                    b.HasIndex("WoodyFlavor_Id");
 
                     b.ToTable("Review");
 
                     b.HasData(
                         new
                         {
-                            ReviewId = 1,
+                            Review_Id = 1,
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             FragrantFlavor_Id = 1,
                             FruityFlavor_Id = 1,
                             GrainyFlavor_Id = 1,
                             GrassyFlavor_Id = 1,
-                            OffNotesFlavor_Id = 1,
+                            OffNoteFlavor_Id = 1,
                             PeatyFlavor_Id = 1,
                             ReviewScore = 95,
                             TastingNotes = "lots of alcohol, very smokey, good neat",
@@ -368,14 +380,16 @@ namespace Dram_Capstone.Migrations
                     b.Property<string>("Name")
                         .IsRequired();
 
+                    b.Property<int?>("Review_Id");
+
                     b.Property<string>("User_Id")
                         .IsRequired();
-
-                    b.Property<int>("WhiskeyReview_Id");
 
                     b.HasKey("WhiskeyId");
 
                     b.HasIndex("ApplicationUserId");
+
+                    b.HasIndex("Review_Id");
 
                     b.ToTable("Whiskey");
 
@@ -386,117 +400,117 @@ namespace Dram_Capstone.Migrations
                             Distillery = "Ardbeg",
                             Favorite = false,
                             Name = "10 year",
-                            User_Id = "3370043a-63ed-4f2c-95e9-feda341655df",
-                            WhiskeyReview_Id = 1
+                            Review_Id = 1,
+                            User_Id = "edee894b-0ccd-40f4-a2d0-f41aa2de89de"
                         });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.WineyFlavor", b =>
                 {
-                    b.Property<int>("WineyFlavorId")
+                    b.Property<int>("WineyFlavor_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("WineyFlavorId");
+                    b.HasKey("WineyFlavor_Id");
 
                     b.ToTable("WineyFlavor");
 
                     b.HasData(
                         new
                         {
-                            WineyFlavorId = 1,
+                            WineyFlavor_Id = 1,
                             Name = "Almond"
                         },
                         new
                         {
-                            WineyFlavorId = 2,
+                            WineyFlavor_Id = 2,
                             Name = "Cream"
                         },
                         new
                         {
-                            WineyFlavorId = 3,
+                            WineyFlavor_Id = 3,
                             Name = "Butter"
                         },
                         new
                         {
-                            WineyFlavorId = 4,
+                            WineyFlavor_Id = 4,
                             Name = "Chocolate"
                         },
                         new
                         {
-                            WineyFlavorId = 5,
+                            WineyFlavor_Id = 5,
                             Name = "Olive"
                         },
                         new
                         {
-                            WineyFlavorId = 6,
+                            WineyFlavor_Id = 6,
                             Name = "Sherry"
                         },
                         new
                         {
-                            WineyFlavorId = 7,
+                            WineyFlavor_Id = 7,
                             Name = "Port"
                         },
                         new
                         {
-                            WineyFlavorId = 8,
+                            WineyFlavor_Id = 8,
                             Name = "Red Wine"
                         });
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.WoodyFlavor", b =>
                 {
-                    b.Property<int>("WoodyFlavorId")
+                    b.Property<int>("WoodyFlavor_Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Name");
 
-                    b.HasKey("WoodyFlavorId");
+                    b.HasKey("WoodyFlavor_Id");
 
                     b.ToTable("WoodyFlavor");
 
                     b.HasData(
                         new
                         {
-                            WoodyFlavorId = 1,
+                            WoodyFlavor_Id = 1,
                             Name = "Caramel"
                         },
                         new
                         {
-                            WoodyFlavorId = 2,
+                            WoodyFlavor_Id = 2,
                             Name = "Creme Brulee"
                         },
                         new
                         {
-                            WoodyFlavorId = 3,
+                            WoodyFlavor_Id = 3,
                             Name = "Caramel"
                         },
                         new
                         {
-                            WoodyFlavorId = 4,
+                            WoodyFlavor_Id = 4,
                             Name = "Clove"
                         },
                         new
                         {
-                            WoodyFlavorId = 5,
+                            WoodyFlavor_Id = 5,
                             Name = "Pepper"
                         },
                         new
                         {
-                            WoodyFlavorId = 6,
+                            WoodyFlavor_Id = 6,
                             Name = "Cigar Box"
                         },
                         new
                         {
-                            WoodyFlavorId = 7,
+                            WoodyFlavor_Id = 7,
                             Name = "Ginger"
                         },
                         new
                         {
-                            WoodyFlavorId = 8,
+                            WoodyFlavor_Id = 8,
                             Name = "Liquorice"
                         });
                 });
@@ -686,16 +700,16 @@ namespace Dram_Capstone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3370043a-63ed-4f2c-95e9-feda341655df",
+                            Id = "edee894b-0ccd-40f4-a2d0-f41aa2de89de",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "7fbaaacf-4d85-47b4-aae3-b24ca549cfbc",
+                            ConcurrencyStamp = "64dea66b-bb92-40d4-8bef-a0c5880550d4",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEIVc794v/3ONSsZ+DatfTR9M3VRFatt3Eupq+6O82yyQtU47oD3mcqO+QJQiUuwBYQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAENPHIpN2K2+XbZWa1xZGpsHKys7ewOB4DO6cefyt2k3T/lphe1RhDuHeOfnzt7dAaQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "ba791ed6-4b77-4c84-94b7-898a14e5a518",
+                            SecurityStamp = "e60477af-059c-44a3-b940-76e65b92c21a",
                             TwoFactorEnabled = false,
                             FirstName = "admin",
                             LastName = "admin"
@@ -704,9 +718,45 @@ namespace Dram_Capstone.Migrations
 
             modelBuilder.Entity("Dram_Capstone.Models.Review", b =>
                 {
-                    b.HasOne("Dram_Capstone.Models.Whiskey")
-                        .WithMany("Reviews")
-                        .HasForeignKey("WhiskeyId");
+                    b.HasOne("Dram_Capstone.Models.FragrantFlavor", "FragrantFlavor")
+                        .WithMany()
+                        .HasForeignKey("FragrantFlavor_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Dram_Capstone.Models.FruityFlavor", "FruityFlavor")
+                        .WithMany()
+                        .HasForeignKey("FruityFlavor_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Dram_Capstone.Models.GrainyFlavor", "GrainyFlavor")
+                        .WithMany()
+                        .HasForeignKey("GrainyFlavor_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Dram_Capstone.Models.GrassyFlavor", "GrassyFlavor")
+                        .WithMany()
+                        .HasForeignKey("GrassyFlavor_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Dram_Capstone.Models.OffNoteFlavor", "OffNoteFlavor")
+                        .WithMany()
+                        .HasForeignKey("OffNoteFlavor_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Dram_Capstone.Models.PeatyFlavor", "PeatyFlavor")
+                        .WithMany()
+                        .HasForeignKey("PeatyFlavor_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Dram_Capstone.Models.WineyFlavor", "WineyFlavor")
+                        .WithMany()
+                        .HasForeignKey("WineyFlavor_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Dram_Capstone.Models.WoodyFlavor", "WoodyFlavor")
+                        .WithMany()
+                        .HasForeignKey("WoodyFlavor_Id")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Dram_Capstone.Models.Whiskey", b =>
@@ -714,6 +764,10 @@ namespace Dram_Capstone.Migrations
                     b.HasOne("Dram_Capstone.Models.ApplicationUser")
                         .WithMany("Whiskeys")
                         .HasForeignKey("ApplicationUserId");
+
+                    b.HasOne("Dram_Capstone.Models.Review", "Review")
+                        .WithMany()
+                        .HasForeignKey("Review_Id");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

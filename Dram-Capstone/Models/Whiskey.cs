@@ -16,16 +16,25 @@ namespace Dram_Capstone.Models
         [Display(Name = "Distillery Name")]
         public string Distillery { get; set; }
 
-        [Required]
-        [Display(Name = "Whiskey Review ID")]
-        public int WhiskeyReview_Id { get; set; }
+        
+        [Display(Name = "Whiskey Review Id")]
+        public int? Review_Id { get; set; }
 
         [Required]
         [Display(Name = "User Id")]
         public string User_Id { get; set; }
+
+        public Review Review { get; set; }
        
         public bool Favorite { get; set; }
 
-        public virtual ICollection<Review> Reviews { get; set; }
+        [Display(Name = "Whiskey Entry")]
+        public string WhiskeyEntry
+        {
+            get
+            {
+                return Distillery + " " + Name;
+            }
+        }
     }
 }

@@ -13,16 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Distillery)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.WhiskeyReview_Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.User_Id)
+                @Html.DisplayNameFor(model => model.WhiskeyEntry)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Favorite)
@@ -32,25 +23,14 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Distillery)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.WhiskeyReview_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.User_Id)
+                @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", new { id = item.WhiskeyId })
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Favorite)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.WhiskeyId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.WhiskeyId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.WhiskeyId">Delete</a>
             </td>
         </tr>
