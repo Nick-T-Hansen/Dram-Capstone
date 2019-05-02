@@ -28,7 +28,15 @@ namespace Dram_Capstone.Controllers
         // GET: Whiskeys
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Whiskey.ToListAsync());
+            //In order to access user specific information, the current user must be identified
+            var user = await GetCurrentUserAsync();
+
+            //Information from the database is received for the current user
+            var applicationDbContext = _context.Whiskey
+                
+                .Where(p => p.User_Id == user.Id);
+
+            return View(await applicationDbContext.ToListAsync());
         }
 
         // GET: Whiskeys/Details/5

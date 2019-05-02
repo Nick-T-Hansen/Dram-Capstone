@@ -51,7 +51,7 @@ namespace Dram_Capstone.Controllers
         }
 
         // GET: Reviews/Create
-        public IActionResult Create()
+        public IActionResult Create(int whiskeyId)
         {
             var FragrantFlavorData = _context.FragrantFlavor;
             var FruityFlavorData = _context.FruityFlavor;
@@ -70,6 +70,55 @@ namespace Dram_Capstone.Controllers
             List<SelectListItem> PeatyFlavorList = new List<SelectListItem>();
             List<SelectListItem> WineyFlavorList = new List<SelectListItem>();
             List<SelectListItem> WoodyFlavorList = new List<SelectListItem>();
+
+            // include the select option in the product type list
+            FragrantFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            FruityFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            GrainyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            GrassyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            OffNoteFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            PeatyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            WineyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            WoodyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
 
             foreach (var f in FragrantFlavorData)
             {
@@ -166,15 +215,14 @@ namespace Dram_Capstone.Controllers
         }
 
         // POST: Reviews/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Review_Id,DateCreated,TastingNotes,ReviewScore,WoodyFlavor_Id,WineyFlavor_Id,OffNoteFlavor_Id,FruityFlavor_Id,FragrantFlavor_Id,PeatyFlavor_Id,GrainyFlavor_Id,GrassyFlavor_Id")] Review review)
         {
             if (ModelState.IsValid)
             {
-
+                
                 _context.Add(review);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
