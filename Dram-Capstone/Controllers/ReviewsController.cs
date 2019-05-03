@@ -226,30 +226,46 @@ namespace Dram_Capstone.Controllers
         public async Task<IActionResult> Create(int id, ReviewCreateViewModel viewModel)
         {
             var user = await GetCurrentUserAsync();
+            ModelState.Remove("Whiskey.Review_Id");
             //capture the id in the create URL which is tied to the whiskey object
             var whiskeyId = id;
-            var reviewid = viewModel.Review.Review_Id;
 
-            //need to select the whiskey which was just reviewed (slect first whiskey where the w. user = the logged in user and its id = the id of the whiskey just reviewed
-            var whiskeyReviewed = _context.Whiskey
-                .FirstOrDefaultAsync(w => w.WhiskeyId == whiskeyId);
+            //need to select the whiskey which was just reviewed 
+            /*
+            var whiskeyReviewed = await _context.Whiskey
+                .Where(w => w.WhiskeyId == whiskeyId)
+                .Select(w => w.Review_Id)
+                .FirstOrDefaultAsync();
+                */
 
-           
+            //.FirstOrDefaultAsync(w => w.WhiskeyId == whiskeyId);
+            //ModelState.Remove("Whiskey.Review_Id");
+
 
             if (ModelState.IsValid)
             {               
                 _context.Add(viewModel.Review);
                 await _context.SaveChangesAsync();
 
+            var reviewid = viewModel.Review.Review_Id;
+
+                var whiskeyReviewed = _context.Whiskey
+                    .Where(w => w.WhiskeyId == whiskeyId)
+                    .First();
+
+                whiskeyReviewed.Review_Id = reviewid;
+               
+                await _context.SaveChangesAsync();
+                
                 
                 //need to update the Review_Id on Whiskey table to tie the review to the correct whiskey
                 //need to pass the whiskeyId into the create view
                 //get whiskey entry
 
-                return RedirectToAction("Edit", WhiskeysController, whiskeyReviewed { _context.Whiskey.Review_Id = reviewid.);
             }
+
             
-            return View(viewModel.Review);
+            return View(whiskey);
         }
 
         // GET: Reviews/Edit/5
