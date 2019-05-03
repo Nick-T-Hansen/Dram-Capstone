@@ -51,8 +51,11 @@ namespace Dram_Capstone.Controllers
         }
 
         // GET: Reviews/Create
-        public IActionResult Create(int whiskeyId)
+        public IActionResult Create(int id)
         {
+
+
+                 
             var FragrantFlavorData = _context.FragrantFlavor;
             var FruityFlavorData = _context.FruityFlavor;
             var GrainyFlavorData = _context.GrainyFlavor;
@@ -211,6 +214,8 @@ namespace Dram_Capstone.Controllers
             RCVM.WineyFlavors = WineyFlavorList;
             RCVM.WoodyFlavors = WoodyFlavorList;
 
+            RCVM.whiskeyId = id;
+
             return View(RCVM);
         }
 
@@ -218,18 +223,33 @@ namespace Dram_Capstone.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Review_Id,DateCreated,TastingNotes,ReviewScore,WoodyFlavor_Id,WineyFlavor_Id,OffNoteFlavor_Id,FruityFlavor_Id,FragrantFlavor_Id,PeatyFlavor_Id,GrainyFlavor_Id,GrassyFlavor_Id")] Review review)
+        public async Task<IActionResult> Create(int id, ReviewCreateViewModel viewModel)
         {
-            
+            var user = await GetCurrentUserAsync();
+            //capture the id in the create URL which is tied to the whiskey object
+            var whiskeyId = id;
+            var reviewid = viewModel.Review.Review_Id;
+
+            //need to select the whiskey which was just reviewed (slect first whiskey where the w. user = the logged in user and its id = the id of the whiskey just reviewed
+            var whiskeyReviewed = _context.Whiskey
+                .FirstOrDefaultAsync(w => w.WhiskeyId == whiskeyId);
+
+           
+
             if (ModelState.IsValid)
-            {
-                
-                _context.Add(review);
+            {               
+                _context.Add(viewModel.Review);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+
+                
+                //need to update the Review_Id on Whiskey table to tie the review to the correct whiskey
+                //need to pass the whiskeyId into the create view
+                //get whiskey entry
+
+                return RedirectToAction("Edit", WhiskeysController, whiskeyReviewed { _context.Whiskey.Review_Id = reviewid.);
             }
             
-            return View(review);
+            return View(viewModel.Review);
         }
 
         // GET: Reviews/Edit/5

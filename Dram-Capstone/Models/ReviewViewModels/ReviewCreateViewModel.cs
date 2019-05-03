@@ -10,6 +10,8 @@ namespace Dram_Capstone.Models.ReviewViewModels
     {
         public Review Review { get; set; }
 
+        public int whiskeyId { get; set; }
+
         public List<SelectListItem> FragrantFlavors{ get; set; }
         public List<SelectListItem> FruityFlavors { get; set; }
         public List<SelectListItem> GrainyFlavors { get; set; }
