@@ -256,8 +256,8 @@ namespace Dram_Capstone.Controllers
                 whiskeyReviewed.Review_Id = reviewid;
                
                 await _context.SaveChangesAsync();
-                
-                
+                return RedirectToAction("Details", "Whiskey");
+
                 //need to update the Review_Id on Whiskey table to tie the review to the correct whiskey
                 //need to pass the whiskeyId into the create view
                 //get whiskey entry
@@ -265,7 +265,7 @@ namespace Dram_Capstone.Controllers
             }
 
             
-            return View(whiskey);
+            return View();
         }
 
         // GET: Reviews/Edit/5
