@@ -10,63 +10,63 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <input asp-for="whiskeyId" type="hidden" />
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Review.TastingNotes" class="control-label"></label>
-                <input asp-for="Review.TastingNotes" class="form-control" />
-                <span asp-validation-for="Review.TastingNotes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.ReviewScore" class="control-label"></label>
-                <input asp-for="Review.ReviewScore" class="form-control" />
-                <span asp-validation-for="Review.ReviewScore" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.WoodyFlavor_Id" class="control-label"></label>
-                <select asp-for="Review.WoodyFlavor_Id" form-control" asp-items="@Model.WoodyFlavors"></select>
-                <span asp-validation-for="Review.WoodyFlavor_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.WineyFlavor_Id" class="control-label"></label>
-                <select asp-for="Review.WineyFlavor_Id" form-control" asp-items="@Model.WineyFlavors"></select>
-                <span asp-validation-for="Review.WineyFlavor_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.OffNoteFlavor_Id" class="control-label"></label>
-                <select asp-for="Review.OffNoteFlavor_Id" form-control" asp-items="@Model.OffNoteFlavors"></select>
-                <span asp-validation-for="Review.OffNoteFlavor_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.FruityFlavor_Id" class="control-label"></label>
-                <select asp-for="Review.FruityFlavor_Id" form-control" asp-items="@Model.FruityFlavors"></select>
-                <span asp-validation-for="Review.FruityFlavor_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.FragrantFlavor_Id" class="control-label"></label>
-                <select asp-for="Review.FragrantFlavor_Id" form-control" asp-items="@Model.FragrantFlavors"></select>
-                <span asp-validation-for="Review.FragrantFlavor_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.PeatyFlavor_Id" class="control-label"></label>
-                <select asp-for="Review.PeatyFlavor_Id" form-control" asp-items="@Model.PeatyFlavors"></select>
-                <span asp-validation-for="Review.PeatyFlavor_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.GrainyFlavor_Id" class="control-label"></label>
-                <select asp-for="Review.GrainyFlavor_Id" form-control" asp-items="@Model.GrainyFlavors"></select>
-                <span asp-validation-for="Review.GrainyFlavor_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.GrassyFlavor_Id" class="control-label"></label>
-                <select asp-for="Review.GrassyFlavor_Id" form-control" asp-items="@Model.GrassyFlavors"></select>
-                <span asp-validation-for="Review.GrassyFlavor_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+            <form asp-action="Create">
+                <input id="WhiskeyId" type="hidden" />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Review.TastingNotes" class="control-label"></label>
+                    <input asp-for="Review.TastingNotes" class="form-control" />
+                    <span asp-validation-for="Review.TastingNotes" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.ReviewScore" class="control-label"></label>
+                    <input asp-for="Review.ReviewScore" class="form-control" />
+                    <span asp-validation-for="Review.ReviewScore" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.WoodyFlavor_Id" class="control-label"></label>
+                    <select asp-for="Review.WoodyFlavor_Id" form-control" asp-items="@Model.WoodyFlavors"></select>
+                    <span asp-validation-for="Review.WoodyFlavor_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.WineyFlavor_Id" class="control-label"></label>
+                    <select asp-for="Review.WineyFlavor_Id" form-control" asp-items="@Model.WineyFlavors"></select>
+                    <span asp-validation-for="Review.WineyFlavor_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.OffNoteFlavor_Id" class="control-label"></label>
+                    <select asp-for="Review.OffNoteFlavor_Id" form-control" asp-items="@Model.OffNoteFlavors"></select>
+                    <span asp-validation-for="Review.OffNoteFlavor_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.FruityFlavor_Id" class="control-label"></label>
+                    <select asp-for="Review.FruityFlavor_Id" form-control" asp-items="@Model.FruityFlavors"></select>
+                    <span asp-validation-for="Review.FruityFlavor_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.FragrantFlavor_Id" class="control-label"></label>
+                    <select asp-for="Review.FragrantFlavor_Id" form-control" asp-items="@Model.FragrantFlavors"></select>
+                    <span asp-validation-for="Review.FragrantFlavor_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.PeatyFlavor_Id" class="control-label"></label>
+                    <select asp-for="Review.PeatyFlavor_Id" form-control" asp-items="@Model.PeatyFlavors"></select>
+                    <span asp-validation-for="Review.PeatyFlavor_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.GrainyFlavor_Id" class="control-label"></label>
+                    <select asp-for="Review.GrainyFlavor_Id" form-control" asp-items="@Model.GrainyFlavors"></select>
+                    <span asp-validation-for="Review.GrainyFlavor_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Review.GrassyFlavor_Id" class="control-label"></label>
+                    <select asp-for="Review.GrassyFlavor_Id" form-control" asp-items="@Model.GrassyFlavors"></select>
+                    <span asp-validation-for="Review.GrassyFlavor_Id" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
     </div>
 </div>
 

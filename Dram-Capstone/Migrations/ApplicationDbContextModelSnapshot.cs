@@ -399,7 +399,7 @@ namespace Dram_Capstone.Migrations
                             Favorite = false,
                             Name = "10 year",
                             Review_Id = 1,
-                            User_Id = "edee894b-0ccd-40f4-a2d0-f41aa2de89de"
+                            User_Id = "d45a60e9-e31e-4a24-9535-3a1c56cb617c"
                         });
                 });
 
@@ -484,7 +484,7 @@ namespace Dram_Capstone.Migrations
                         new
                         {
                             WoodyFlavor_Id = 3,
-                            Name = "Caramel"
+                            Name = "Syrup"
                         },
                         new
                         {
@@ -698,16 +698,16 @@ namespace Dram_Capstone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "edee894b-0ccd-40f4-a2d0-f41aa2de89de",
+                            Id = "d45a60e9-e31e-4a24-9535-3a1c56cb617c",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "64dea66b-bb92-40d4-8bef-a0c5880550d4",
+                            ConcurrencyStamp = "9184336e-3d74-4ceb-b25b-45fb7f9cff68",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAENPHIpN2K2+XbZWa1xZGpsHKys7ewOB4DO6cefyt2k3T/lphe1RhDuHeOfnzt7dAaQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEjTcpfkM0fFDrO7ss7JEM8OKO3zd58deqIzVLSOhsCeX5qtLXnNCDvyfSgBimdZQQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "e60477af-059c-44a3-b940-76e65b92c21a",
+                            SecurityStamp = "90727ee4-c263-428e-9425-baf4eb3095bb",
                             TwoFactorEnabled = false,
                             FirstName = "admin",
                             LastName = "admin"
