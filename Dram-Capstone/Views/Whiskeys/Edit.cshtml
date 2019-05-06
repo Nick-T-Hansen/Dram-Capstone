@@ -1,4 +1,4 @@
-﻿@model Dram_Capstone.Models.Whiskey
+﻿@model Dram_Capstone.Models.WhiskeyViewModels.WhiskeyEditViewModel
 
 @{
     ViewData["Title"] = "Edit";
@@ -6,46 +6,89 @@
 
 <h1>Edit</h1>
 
-<h4>Whiskey</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="WhiskeyId" />
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Distillery" class="control-label"></label>
-                <input asp-for="Distillery" class="form-control" />
-                <span asp-validation-for="Distillery" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review_Id" class="control-label"></label>
-                <input asp-for="Review_Id" class="form-control" />
-                <span asp-validation-for="Review_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="User_Id" class="control-label"></label>
-                <input asp-for="User_Id" class="form-control" />
-                <span asp-validation-for="User_Id" class="text-danger"></span>
-            </div>
-            <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Favorite" /> @Html.DisplayNameFor(model => model.Favorite)
-                </label>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
-</div>
-
 <div>
+    <h4>Whiskey</h4>
+    <hr />
+    <dl class="row">
+        <input id="WhiskeyId" type="hidden" />
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Whiskey.Distillery)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Whiskey.Distillery)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Whiskey.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Whiskey.Name)
+        </dd>
+        @if (Model.Whiskey.Review_Id != null)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Whiskey.Review_Id)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Whiskey.Review.DateCreated)
+            </dd>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Whiskey.Review.ReviewScore)
+            </dd>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Whiskey.Review.TastingNotes)
+            </dd>
+            <div class="form-group">
+                <label asp-for="Review.WoodyFlavor_Id" class="control-label"></label>
+                <select asp-for="Review.WoodyFlavor_Id" form-control" asp-items="@Model.WoodyFlavors"></select>
+                <span asp-validation-for="Review.WoodyFlavor_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.WineyFlavor_Id" class="control-label"></label>
+                <select asp-for="Review.WineyFlavor_Id" form-control" asp-items="@Model.WineyFlavors"></select>
+                <span asp-validation-for="Review.WineyFlavor_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.OffNoteFlavor_Id" class="control-label"></label>
+                <select asp-for="Review.OffNoteFlavor_Id" form-control" asp-items="@Model.OffNoteFlavors"></select>
+                <span asp-validation-for="Review.OffNoteFlavor_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.FruityFlavor_Id" class="control-label"></label>
+                <select asp-for="Review.FruityFlavor_Id" form-control" asp-items="@Model.FruityFlavors"></select>
+                <span asp-validation-for="Review.FruityFlavor_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.FragrantFlavor_Id" class="control-label"></label>
+                <select asp-for="Review.FragrantFlavor_Id" form-control" asp-items="@Model.FragrantFlavors"></select>
+                <span asp-validation-for="Review.FragrantFlavor_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.PeatyFlavor_Id" class="control-label"></label>
+                <select asp-for="Review.PeatyFlavor_Id" form-control" asp-items="@Model.PeatyFlavors"></select>
+                <span asp-validation-for="Review.PeatyFlavor_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.GrainyFlavor_Id" class="control-label"></label>
+                <select asp-for="Review.GrainyFlavor_Id" form-control" asp-items="@Model.GrainyFlavors"></select>
+                <span asp-validation-for="Review.GrainyFlavor_Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.GrassyFlavor_Id" class="control-label"></label>
+                <select asp-for="Review.GrassyFlavor_Id" form-control" asp-items="@Model.GrassyFlavors"></select>
+                <span asp-validation-for="Review.GrassyFlavor_Id" class="text-danger"></span>
+            </div>
+        }
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Whiskey.Favorite)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Whiskey.Favorite)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Whiskey.WhiskeyId">Save Edits</a> |
     <a asp-action="Index">Back to List</a>
 </div>
 
