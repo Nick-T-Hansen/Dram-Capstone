@@ -364,7 +364,7 @@ namespace Dram_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "FirstName", "LastName" },
-                values: new object[] { "edee894b-0ccd-40f4-a2d0-f41aa2de89de", 0, "64dea66b-bb92-40d4-8bef-a0c5880550d4", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAENPHIpN2K2+XbZWa1xZGpsHKys7ewOB4DO6cefyt2k3T/lphe1RhDuHeOfnzt7dAaQ==", null, false, "e60477af-059c-44a3-b940-76e65b92c21a", false, null, "admin", "admin" });
+                values: new object[] { "d45a60e9-e31e-4a24-9535-3a1c56cb617c", 0, "9184336e-3d74-4ceb-b25b-45fb7f9cff68", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAEEjTcpfkM0fFDrO7ss7JEM8OKO3zd58deqIzVLSOhsCeX5qtLXnNCDvyfSgBimdZQQ==", null, false, "90727ee4-c263-428e-9425-baf4eb3095bb", false, null, "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "FragrantFlavor",
@@ -471,7 +471,7 @@ namespace Dram_Capstone.Migrations
                     { 7, "Ginger" },
                     { 2, "Creme Brulee" },
                     { 1, "Caramel" },
-                    { 3, "Caramel" },
+                    { 3, "Syrup" },
                     { 8, "Liquorice" }
                 });
 
@@ -483,7 +483,7 @@ namespace Dram_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "Whiskey",
                 columns: new[] { "WhiskeyId", "ApplicationUserId", "Distillery", "Favorite", "Name", "Review_Id", "User_Id" },
-                values: new object[] { 1, null, "Ardbeg", false, "10 year", 1, "edee894b-0ccd-40f4-a2d0-f41aa2de89de" });
+                values: new object[] { 1, null, "Ardbeg", false, "10 year", 1, "d45a60e9-e31e-4a24-9535-3a1c56cb617c" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

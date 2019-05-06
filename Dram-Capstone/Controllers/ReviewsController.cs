@@ -7,17 +7,24 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Dram_Capstone.Data;
 using Dram_Capstone.Models;
+using Microsoft.AspNetCore.Identity;
+using Dram_Capstone.Models.ReviewViewModels;
 
 namespace Dram_Capstone.Controllers
 {
     public class ReviewsController : Controller
     {
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<ApplicationUser> _userManager;
 
-        public ReviewsController(ApplicationDbContext context)
+        public ReviewsController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
+
         }
+
+        private Task<ApplicationUser> GetCurrentUserAsync() => _userManager.GetUserAsync(HttpContext.User);
 
         // GET: Reviews
         public async Task<IActionResult> Index()
@@ -44,27 +51,209 @@ namespace Dram_Capstone.Controllers
         }
 
         // GET: Reviews/Create
-        public IActionResult Create()
+        public IActionResult Create(int id)
         {
-            return View();
+
+
+                 
+            var FragrantFlavorData = _context.FragrantFlavor;
+            var FruityFlavorData = _context.FruityFlavor;
+            var GrainyFlavorData = _context.GrainyFlavor;
+            var GrassyFlavorData = _context.GrassyFlavor;
+            var OffNoteFlavorData = _context.OffNoteFlavor;
+            var PeatyFlavorData = _context.PeatyFlavor;
+            var WineyFlavorData = _context.WineyFlavor;
+            var WoodyFLavorData = _context.WoodyFlavor;
+
+            List<SelectListItem> FragrantFlavorList = new List<SelectListItem>();
+            List<SelectListItem> FruityFlavorList = new List<SelectListItem>();
+            List<SelectListItem> GrainyFlavorList = new List<SelectListItem>();
+            List<SelectListItem> GrassyFlavorList = new List<SelectListItem>();
+            List<SelectListItem> OffNoteFlavorList = new List<SelectListItem>();
+            List<SelectListItem> PeatyFlavorList = new List<SelectListItem>();
+            List<SelectListItem> WineyFlavorList = new List<SelectListItem>();
+            List<SelectListItem> WoodyFlavorList = new List<SelectListItem>();
+
+            // include the select option in the product type list
+            FragrantFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            FruityFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            GrainyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            GrassyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            OffNoteFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            PeatyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            WineyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            WoodyFlavorList.Insert(0, new SelectListItem
+            {
+                Text = "Select",
+                Value = ""
+            });
+
+            foreach (var f in FragrantFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.FragrantFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                FragrantFlavorList.Add(li);
+            };
+
+            foreach (var f in FruityFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.FruityFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                FruityFlavorList.Add(li);
+            };
+
+            foreach (var f in GrainyFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.GrainyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                GrainyFlavorList.Add(li);
+            };
+
+            foreach (var f in GrassyFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.GrassyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                GrassyFlavorList.Add(li);
+            };
+
+            foreach (var f in OffNoteFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.OffNoteFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                OffNoteFlavorList.Add(li);
+            };
+
+            foreach (var f in PeatyFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.PeatyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                PeatyFlavorList.Add(li);
+            };
+
+            foreach (var f in WineyFlavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.WineyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                WineyFlavorList.Add(li);
+            };
+
+            foreach (var f in WoodyFLavorData)
+            {
+                SelectListItem li = new SelectListItem
+                {
+                    Value = f.WoodyFlavor_Id.ToString(),
+                    Text = f.Name
+                };
+                WoodyFlavorList.Add(li);
+            };
+
+            ReviewCreateViewModel RCVM = new ReviewCreateViewModel();
+
+            RCVM.FragrantFlavors = FragrantFlavorList;
+            RCVM.FruityFlavors = FruityFlavorList;
+            RCVM.GrainyFlavors = GrainyFlavorList;
+            RCVM.GrassyFlavors = GrassyFlavorList;
+            RCVM.OffNoteFlavors = OffNoteFlavorList;
+            RCVM.PeatyFlavors = PeatyFlavorList;
+            RCVM.WineyFlavors = WineyFlavorList;
+            RCVM.WoodyFlavors = WoodyFlavorList;
+
+            RCVM.whiskeyId = id;
+
+            return View(RCVM);
         }
 
         // POST: Reviews/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Review_Id,DateCreated,TastingNotes,ReviewScore,WoodyFlavor_Id,WineyFlavor_Id,OffNoteFlavor_Id,FruityFlavor_Id,FragrantFlavor_Id,PeatyFlavor_Id,GrainyFlavor_Id,GrassyFlavor_Id")] Review review)
+        public async Task<IActionResult> Create(int id, ReviewCreateViewModel viewModel)
         {
-            if (ModelState.IsValid)
-            {
+            var user = await GetCurrentUserAsync();
+            ModelState.Remove("Whiskey.Review_Id");
+            //capture the id in the create URL which is tied to the whiskey object
+            var whiskeyId = id;
 
-                _context.Add(review);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
             
-            return View(review);
+            if (ModelState.IsValid)
+            {               
+                _context.Add(viewModel.Review);
+                await _context.SaveChangesAsync();
+
+                var reviewid = viewModel.Review.Review_Id;
+
+                //need to select the whiskey which was just reviewed 
+                var whiskeyReviewed = _context.Whiskey
+                    .Where(w => w.WhiskeyId == whiskeyId)
+                    .First();
+
+                //update the review id in the whiskey table to be the same as the view model review id
+                whiskeyReviewed.Review_Id = reviewid;
+               
+                await _context.SaveChangesAsync();
+                //redirect the user back to the Whiskey details page where they can see the newly added review
+                return RedirectToAction("Details", "Whiskeys",  new { id = whiskeyId });
+                //return View("~/Views/Whiskeys/Index.Details.cshtml");
+            }
+
+          
+            return View(viewModel);
         }
 
         // GET: Reviews/Edit/5
