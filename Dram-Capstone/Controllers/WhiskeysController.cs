@@ -180,7 +180,7 @@ namespace Dram_Capstone.Controllers
                 Text = "Select",
                 Value = ""
             });
-
+            
             foreach (var f in FragrantFlavorData)
             {
                 SelectListItem li = new SelectListItem
@@ -280,42 +280,52 @@ namespace Dram_Capstone.Controllers
 
 
         // POST: Whiskeys/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, Whiskey whiskey, Review review)
+        public async Task<IActionResult> Edit(int id, WhiskeyEditViewModel viewModel)
         {
-            if (id != whiskey.WhiskeyId)
-            {
-                return NotFound();
-            }
-          
+            var whiskeyId = id;
 
-            ModelState.Remove("UserId");
+            //ModelState.Remove("Whiskey.Review_Id");
+            ModelState.Remove("User_Id");
             ModelState.Remove("User");
 
-            var user = await GetCurrentUserAsync();
+
             if (ModelState.IsValid)
             {
                 try
                 {
+                    var whiskeyUser = viewModel.Whiskey.User_Id;
+                    var user = await GetCurrentUserAsync();
 
-                    whiskey.User_Id = user.Id;
-                    _context.Update(whiskey);
-                    await _context.SaveChangesAsync();                  
-
-                    _context.Update(review);
+                    viewModel.Whiskey.User_Id = user.Id;
+                    _context.Update(viewModel.Whiskey);
                     await _context.SaveChangesAsync();
 
-                    return RedirectToAction("Index");
+                    /* need conditional for a whiskey update that does not have a review id. error when modifying a review without a review (but update is sent) and a different error when updating a whiskey+review (review becomes null in DB)
+                    if (viewModel.Whiskey.Review_Id == null)
+                    {
+                    */
 
-                    
+                        //assign the id from the review table of the review just created
+                        var reviewid = viewModel.Review.Review_Id;
 
+                        //need to select the whiskey which was just reviewed 
+                        var whiskeyReviewed = _context.Whiskey
+                            .Where(w => w.WhiskeyId == whiskeyId)
+                            .First();
+
+                        //update the review id in the whiskey table to be the same as the view model review id
+                        whiskeyReviewed.Review_Id = reviewid;
+                                    
+                        _context.Update(viewModel.Review);
+                        await _context.SaveChangesAsync();
+                                             
+                        return RedirectToAction("Index");                   
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!WhiskeyExists(whiskey.WhiskeyId))
+                    if (!WhiskeyExists(viewModel.Whiskey.WhiskeyId))
                     {
                         return NotFound();
                     }
@@ -324,9 +334,8 @@ namespace Dram_Capstone.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
-            return View(whiskey);
+            return View(viewModel);
         }
 
         // GET: Whiskeys/Delete/5
