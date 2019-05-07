@@ -85,7 +85,7 @@
         they can not add a review or edit the post *@
     @{ var user = await UserManager.GetUserAsync(User);}
 
-    @if (user.Id == Model.User_Id)
+    @if (user.Id == Model.UserId)
     {
         <a asp-action="Edit" asp-route-id="@Model.WhiskeyId">Edit Whiskey</a>
         <a asp-action="Index">Back to List</a>

@@ -34,30 +34,13 @@ namespace Dram_Capstone.Controllers
 
             //Information from the database is received for the current user
             var applicationDbContext = _context.Whiskey
-                .Where(p => p.User_Id == user.Id)
+                .Where(p => p.UserId == user.Id)
                 .OrderBy(p => p.WhiskeyEntry);
 
             return View(await applicationDbContext.ToListAsync());
         }
-        /*
-        public async Task<IActionResult> FavoriteWhiskeys()
-        {
-            //In order to access user specific information, the current user must be identified
-            var user = await GetCurrentUserAsync();
-
-            //Information from the database is received for the current user
-            var favoriteWhiskeys = _context.Whiskey
-                .Where(p => p.User_Id == user.Id)
-                .OrderBy(p => p.WhiskeyEntry)
-                .ToList();
-
-           WhiskeyHomeIndexView WHIV = new WhiskeyHomeIndexView();
-
-            WHIV.FavoriteWhiskeys = favoriteWhiskeys;
-
-            return View(WHIV);
-        }
-        */
+       
+        
         // GET: Whiskeys/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -98,14 +81,14 @@ namespace Dram_Capstone.Controllers
         public async Task<IActionResult> Create(Whiskey whiskey)
         {
 
-            ModelState.Remove("User_Id");
+            ModelState.Remove("UserId");
             ModelState.Remove("User");
             var user = await GetCurrentUserAsync();
 
 
             if (ModelState.IsValid)
             {
-                whiskey.User_Id = user.Id;
+                whiskey.UserId = user.Id;
                 _context.Add(whiskey);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -307,7 +290,7 @@ namespace Dram_Capstone.Controllers
             
 
             //ModelState.Remove("Whiskey.Review_Id");
-            ModelState.Remove("User_Id");
+            ModelState.Remove("UserId");
             ModelState.Remove("User");
 
 
@@ -315,10 +298,10 @@ namespace Dram_Capstone.Controllers
             {
                 try
                 {
-                    var whiskeyUser = viewModel.Whiskey.User_Id;
+                    var whiskeyUser = viewModel.Whiskey.UserId;
                     var user = await GetCurrentUserAsync();
 
-                    viewModel.Whiskey.User_Id = user.Id;
+                    viewModel.Whiskey.UserId = user.Id;
 
                     _context.Update(viewModel.Whiskey);
                     await _context.SaveChangesAsync();

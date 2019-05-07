@@ -12,13 +12,13 @@
         {
             <div>
                 <div>
-                    @Html.ActionLink(($"{item.WhiskeyEntry} reviewed by {item.User_Id} "), "Details", "Whiskeys", new { id = item.WhiskeyId })
+                    @Html.ActionLink(($"{item.WhiskeyEntry} reviewed by {item.User.FullName} "), "Details", "Whiskeys", new { id = item.WhiskeyId })
                 </div>
             </div>
         }
     </div>
             <h2>Favorite Whiskeys</h2>
-    @*<div class="col-sm-6">
+    <div class="col-sm-6">
             @foreach (var item in Model.FavoriteWhiskeys)
             {
                 if (item.Favorite == true)
@@ -31,6 +31,5 @@
 
                 }
             }
-        </div> *@
-
+        </div> 
 </div>

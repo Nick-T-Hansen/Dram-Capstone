@@ -378,9 +378,7 @@ namespace Dram_Capstone.Migrations
 
                     b.Property<int?>("Review_Id");
 
-                    b.Property<string>("UserId");
-
-                    b.Property<string>("User_Id")
+                    b.Property<string>("UserId")
                         .IsRequired();
 
                     b.HasKey("WhiskeyId");
@@ -399,7 +397,7 @@ namespace Dram_Capstone.Migrations
                             Favorite = false,
                             Name = "10 year",
                             Review_Id = 1,
-                            User_Id = "85ee9ee5-ecbd-40d8-a31e-a5c20c59fa1c"
+                            UserId = "197f5202-d1b8-4d62-b22a-30e39fe375c1"
                         });
                 });
 
@@ -698,16 +696,16 @@ namespace Dram_Capstone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "85ee9ee5-ecbd-40d8-a31e-a5c20c59fa1c",
+                            Id = "197f5202-d1b8-4d62-b22a-30e39fe375c1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "61d85423-79ec-45c4-97b3-d739610e83cc",
+                            ConcurrencyStamp = "60717474-603c-45f0-9b1c-6606ea86b985",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELkBC92YoaldxZrc4gjBDv/bEvmSiS9BLfSVJ7lyZZ7P39bHnBuNdP7/iH7nroWv+A==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELZNneEz0mjZWcLjSffNdrxF7AWnyLcCH/j0slaSqjNEpIeHuMyvQXqEn+TtShFFiQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7e386b2a-b41b-4ab3-b26f-62b94f9cfd51",
+                            SecurityStamp = "aa9f9145-a64b-4388-8366-6961dbd64f46",
                             TwoFactorEnabled = false,
                             FirstName = "admin",
                             LastName = "admin"
@@ -765,7 +763,8 @@ namespace Dram_Capstone.Migrations
 
                     b.HasOne("Dram_Capstone.Models.ApplicationUser", "User")
                         .WithMany("Whiskeys")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

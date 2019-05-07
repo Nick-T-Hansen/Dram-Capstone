@@ -340,8 +340,7 @@ namespace Dram_Capstone.Migrations
                     Name = table.Column<string>(nullable: false),
                     Distillery = table.Column<string>(nullable: false),
                     Review_Id = table.Column<int>(nullable: true),
-                    User_Id = table.Column<string>(nullable: false),
-                    UserId = table.Column<string>(nullable: true),
+                    UserId = table.Column<string>(nullable: false),
                     Favorite = table.Column<bool>(nullable: false)
                 },
                 constraints: table =>
@@ -358,13 +357,13 @@ namespace Dram_Capstone.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "FirstName", "LastName" },
-                values: new object[] { "85ee9ee5-ecbd-40d8-a31e-a5c20c59fa1c", 0, "61d85423-79ec-45c4-97b3-d739610e83cc", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAELkBC92YoaldxZrc4gjBDv/bEvmSiS9BLfSVJ7lyZZ7P39bHnBuNdP7/iH7nroWv+A==", null, false, "7e386b2a-b41b-4ab3-b26f-62b94f9cfd51", false, null, "admin", "admin" });
+                values: new object[] { "197f5202-d1b8-4d62-b22a-30e39fe375c1", 0, "60717474-603c-45f0-9b1c-6606ea86b985", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAELZNneEz0mjZWcLjSffNdrxF7AWnyLcCH/j0slaSqjNEpIeHuMyvQXqEn+TtShFFiQ==", null, false, "aa9f9145-a64b-4388-8366-6961dbd64f46", false, null, "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "FragrantFlavor",
@@ -482,8 +481,8 @@ namespace Dram_Capstone.Migrations
 
             migrationBuilder.InsertData(
                 table: "Whiskey",
-                columns: new[] { "WhiskeyId", "Distillery", "Favorite", "Name", "Review_Id", "UserId", "User_Id" },
-                values: new object[] { 1, "Ardbeg", false, "10 year", 1, null, "85ee9ee5-ecbd-40d8-a31e-a5c20c59fa1c" });
+                columns: new[] { "WhiskeyId", "Distillery", "Favorite", "Name", "Review_Id", "UserId" },
+                values: new object[] { 1, "Ardbeg", false, "10 year", 1, "197f5202-d1b8-4d62-b22a-30e39fe375c1" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

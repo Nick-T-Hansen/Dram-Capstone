@@ -22,7 +22,7 @@ namespace Dram_Capstone.Models
 
         [Required]
         [Display(Name = "User Id")]
-        public string User_Id { get; set; }
+        public string UserId { get; set; }
 
         public Review Review { get; set; }
 
