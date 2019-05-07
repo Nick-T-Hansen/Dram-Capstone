@@ -41,7 +41,7 @@ namespace Dram_Capstone.Controllers
             //Whiskey reviews completed by other users and displays the whiskey entry and user name
             var othersWhiskey = _context.Whiskey
                 .Include(p => p.User)
-                .Where(p => p.User_Id != user.Id)
+                //.Where(p => p.User_Id != user.Id)
                 .Where(p => p.Review_Id != null)
                 .OrderBy(p => p.Review.DateCreated)
                 .ToList();

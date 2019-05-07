@@ -8,14 +8,14 @@
 <div class="row">
     <div class="col-sm-6">
         <h2>Recent Whiskey Reviews on Dram</h2>
-        @*@foreach (var item in Model.OthersWhiskeys)
+        @foreach (var item in Model.OthersWhiskeys)
         {
             <div>
                 <div>
-                    @Html.ActionLink(($"{item.WhiskeyEntry} reviewed by {item.User.FullName} "), "Details", "Whiskeys", new { id = item.WhiskeyId })
+                    @Html.ActionLink(($"{item.WhiskeyEntry} reviewed by {item.User_Id} "), "Details", "Whiskeys", new { id = item.WhiskeyId })
                 </div>
             </div>
-        }*@
+        }
     </div>
             <h2>Favorite Whiskeys</h2>
     @*<div class="col-sm-6">
@@ -31,6 +31,6 @@
 
                 }
             }
-        </div>*@
+        </div> *@
 
 </div>
