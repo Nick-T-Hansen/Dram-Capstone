@@ -305,27 +305,7 @@ namespace Dram_Capstone.Controllers
                     _context.Update(viewModel.Whiskey);
                     await _context.SaveChangesAsync();
 
-                    /* need conditional for a whiskey update that does not have a review id. error when modifying a review without a review (but update is sent) and a different error when updating a whiskey+review (review becomes null in DB)
-                    if (viewModel.Whiskey.Review_Id == null)
-                    {
-                    */
-
-                    //assign the id from the review table of the review just created
-                    //var reviewid = viewModel.Review.Review_Id;
-                    var reviewid = viewModel.Whiskey.Review.Review_Id;
-
-                        //need to select the whiskey which was just reviewed 
-                        var whiskeyReviewed = _context.Whiskey
-                            .Where(w => w.WhiskeyId == whiskeyId)
-                            .First();
-
-                        //update the review id in the whiskey table to be the same as the view model review id
-                        whiskeyReviewed.Review_Id = reviewid;
-                                    
-                        _context.Update(viewModel.Review);
-                        await _context.SaveChangesAsync();
-                                             
-                        return RedirectToAction("Index");                   
+                    return RedirectToAction("Index");                   
                 }
                 catch (DbUpdateConcurrencyException)
                 {
