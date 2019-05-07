@@ -39,7 +39,25 @@ namespace Dram_Capstone.Controllers
 
             return View(await applicationDbContext.ToListAsync());
         }
+        /*
+        public async Task<IActionResult> FavoriteWhiskeys()
+        {
+            //In order to access user specific information, the current user must be identified
+            var user = await GetCurrentUserAsync();
 
+            //Information from the database is received for the current user
+            var favoriteWhiskeys = _context.Whiskey
+                .Where(p => p.User_Id == user.Id)
+                .OrderBy(p => p.WhiskeyEntry)
+                .ToList();
+
+           WhiskeyHomeIndexView WHIV = new WhiskeyHomeIndexView();
+
+            WHIV.FavoriteWhiskeys = favoriteWhiskeys;
+
+            return View(WHIV);
+        }
+        */
         // GET: Whiskeys/Details/5
         public async Task<IActionResult> Details(int? id)
         {

@@ -20,5 +20,14 @@ namespace Dram_Capstone.Models
         // Set up PK -> FK relationships to other objects
         public virtual ICollection<Whiskey> Whiskeys { get; set; }
 
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+
     }
 }

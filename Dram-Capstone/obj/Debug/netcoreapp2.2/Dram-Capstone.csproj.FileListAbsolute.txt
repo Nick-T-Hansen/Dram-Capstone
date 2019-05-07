@@ -16,7 +16,6 @@ C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Dra
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Dram-Capstone.RazorCoreGenerate.cache
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Areas\Identity\Pages\_ViewStart.g.cshtml.cs
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
-C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
@@ -45,3 +44,4 @@ C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Raz
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Reviews\Details.g.cshtml.cs
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Reviews\Edit.g.cshtml.cs
 C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Reviews\Index.g.cshtml.cs
+C:\Users\nickh\workspace\Dram-Capstone\Dram-Capstone\obj\Debug\netcoreapp2.2\Razor\Views\Home\LandingPage.g.cshtml.cs

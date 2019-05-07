@@ -16,7 +16,7 @@ namespace Dram_Capstone.Models
         [Display(Name = "Distillery Name")]
         public string Distillery { get; set; }
 
-        
+
         [Display(Name = "Whiskey Review Id")]
         public int? Review_Id { get; set; }
 
@@ -25,6 +25,8 @@ namespace Dram_Capstone.Models
         public string User_Id { get; set; }
 
         public Review Review { get; set; }
+
+        public ApplicationUser User {get; set;}
        
         public bool Favorite { get; set; }
 
@@ -36,5 +38,6 @@ namespace Dram_Capstone.Models
                 return Distillery + " " + Name;
             }
         }
+        
     }
 }

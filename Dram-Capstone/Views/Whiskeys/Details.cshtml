@@ -1,5 +1,6 @@
 ﻿@model Dram_Capstone.Models.Whiskey
-
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<ApplicationUser> UserManager
 @{
     ViewData["Title"] = "Details";
 }
@@ -63,9 +64,11 @@
         }
         else
         {
+
             <dt class="col-sm-12">
-                <a asp-controller="Reviews" asp-route-id ="@Model.WhiskeyId" asp-action="Create">Add Your Review!</a>
+                <a asp-controller="Reviews" asp-route-id="@Model.WhiskeyId" asp-action="Create">Add Your Review!</a>
             </dt>
+
 
         }
 
@@ -78,6 +81,17 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.WhiskeyId">Edit Whiskey</a> |
-    <a asp-action="Index">Back to List</a>
+    @*need to add conditional rendering, if the user not logged in is reviewing the details,
+        they can not add a review or edit the post *@
+    @{ var user = await UserManager.GetUserAsync(User);}
+
+    @if (user.Id == Model.User_Id)
+    {
+        <a asp-action="Edit" asp-route-id="@Model.WhiskeyId">Edit Whiskey</a>
+        <a asp-action="Index">Back to List</a>
+    }
+    else
+    {
+        <a asp-action="Index">Back to List</a>
+    }
 </div>
