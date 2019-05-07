@@ -34,8 +34,8 @@ namespace Dram_Capstone.Controllers
 
             //Information from the database is received for the current user
             var applicationDbContext = _context.Whiskey
-
-                .Where(p => p.User_Id == user.Id);
+                .Where(p => p.User_Id == user.Id)
+                .OrderBy(p => p.WhiskeyEntry);
 
             return View(await applicationDbContext.ToListAsync());
         }
