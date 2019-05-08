@@ -6,7 +6,7 @@
 }
 
 <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
         <h2>Recent User Reviews</h2>
         @foreach (var item in Model.OthersWhiskeys)
         {
@@ -15,17 +15,27 @@
             </div>
         }
     </div>
-    <div class="col-s-6">
+    <div class="col-sm-8 text-center">
         <h2>Favorite Whiskeys</h2>
-
-        @foreach (var item in Model.FavoriteWhiskeys)
-        {
-            if (item.Favorite == true)
+        <div class=" row">
+            @foreach (var item in Model.FavoriteWhiskeys)
             {
-                <div>
-                    @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })
-                </div>
+                if (item.Favorite == true)
+                {
+                    <div class=" col-sm-4 ">
+                        <div class="card bg-light shadow mb-5 bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Distillery)</h5>
+                                <p class="card-text">@Html.ActionLink(($"{item.Name}"), "Details", "Whiskeys", new { id = item.WhiskeyId })</p>
+                                <div class=" card-footer">
+                                    <p> @Html.DisplayFor(modelItem => item.Review.ReviewScore)<p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
             }
-        }
-    </div> 
+            </div>
+        </div> 
 </div>

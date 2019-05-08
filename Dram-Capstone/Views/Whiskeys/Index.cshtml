@@ -5,36 +5,27 @@
 }
 
 <h1>My Whiskey Library</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-@*<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.WhiskeyEntry)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Favorite)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>*@
+<p><a asp-action="Create">Create New</a></p>
 <div class=" row">
 
 @foreach (var item in Model) {
-    <div class=" col-sm-3">
+    <div class=" col-sm-3 text-center">
         <div class="card bg-light shadow p-3 mb-5 bg-white rounded">      
             <div class="card-body">
                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.Distillery)</h5>
                 <p class="card-text">@Html.ActionLink(($"{item.Name}"), "Details", new { id = item.WhiskeyId })</p>
                 <div class=" card-footer">
-                    @Html.DisplayFor(modelItem => item.Favorite)
+                    @if (item.Favorite == true)
+                    {
+                        <i class="fas fa-heart"></i>
+                    }
+                    else
+                    {
+                        <i class="far fa-heart"></i>
+                    }
+
                     <a asp-action="Delete" asp-route-id="@item.WhiskeyId">
-                        Delete
-                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                        <i class="far fa-trash-alt"></i>
                     </a>
                 </div>
             </div> 
