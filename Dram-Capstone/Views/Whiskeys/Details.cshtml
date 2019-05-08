@@ -97,19 +97,19 @@
             </dl>
         </div>
     </div>
-        <div>
-            @*conditional rendering if the user not logged in is reviewing the details,
-            they can not add a review or edit the post *@
-            @{ var user = await UserManager.GetUserAsync(User);}
+    <div>
+        @*conditional rendering if the user not logged in is reviewing the details,
+        they can not add a review or edit the post *@
+        @{ var user = await UserManager.GetUserAsync(User);}
 
-            @if (user.Id == Model.UserId)
-            {
-                <a asp-action="Edit" asp-route-id="@Model.WhiskeyId">Edit Whiskey</a><a> | </a>
-                <a asp-action="Index">Back to List</a>
-            }
-            else
-            {
-                <a asp-action="Index">Back to List</a>
-            }
+        @if (user.Id == Model.UserId)
+        {
+            <a asp-action="Edit" asp-route-id="@Model.WhiskeyId">Edit Whiskey</a><a> | </a>
+            <a asp-action="Index">Back to Library</a>
+        }
+        else
+        {
+            @Html.ActionLink("Go Back", "Index", "Home")
+        }
         </div>
     

@@ -8,6 +8,7 @@
 <div class="row">
     <div class="col-sm-4">
         <h2>Recent User Reviews</h2>
+        <br>
         @foreach (var item in Model.OthersWhiskeys)
         {
         <div>
@@ -17,8 +18,9 @@
     </div>
     <div class="col-sm-1"></div>
     <div class="col-sm-7 text-center">
-        <h2>Favorite Whiskeys</h2>
-        <div class=" row">
+        <h2><i class="far fa-heart"></i> Whiskeys</h2>
+        <br>
+        <div class=" row d-flex justify-content-center">
             @foreach (var item in Model.FavoriteWhiskeys)
             {
                 if (item.Favorite == true)

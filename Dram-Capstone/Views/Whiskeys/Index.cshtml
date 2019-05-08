@@ -14,7 +14,7 @@
             <div class="card-body">
                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.Distillery)</h5>
                 <p class="card-text">@Html.ActionLink(($"{item.Name}"), "Details", new { id = item.WhiskeyId })</p>
-                <div class=" card-footer">
+                <div class=" card-footer bg-white ">
                     @if (item.Favorite == true)
                     {
                         <span style="color: Tomato;">
