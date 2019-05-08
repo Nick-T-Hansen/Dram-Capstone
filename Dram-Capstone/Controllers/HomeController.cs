@@ -47,6 +47,7 @@ namespace Dram_Capstone.Controllers
                 .ToList();
 
             var favoriteWhiskeys = _context.Whiskey
+                .Include(p => p.Review)
                 .Where(p => p.UserId == user.Id)
                 .OrderBy(p => p.WhiskeyEntry)
                 .ToList();

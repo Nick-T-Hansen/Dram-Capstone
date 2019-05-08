@@ -17,17 +17,19 @@
                 <div class=" card-footer">
                     @if (item.Favorite == true)
                     {
-                        <i class="fas fa-heart"></i>
-                    }
-                    else
-                    {
-                        <i class="far fa-heart"></i>
-                    }
+                        <span style="color: Tomato;">
+                            <i class="fas fa-heart style=color:#ff0000"></i>
+                            </span>
+                            }
+                            else
+                            {
+                            <i class="far fa-heart"></i>
+                            }
 
-                    <a asp-action="Delete" asp-route-id="@item.WhiskeyId">
-                        <i class="far fa-trash-alt"></i>
-                    </a>
-                </div>
+                            <a asp-action="Delete" asp-route-id="@item.WhiskeyId">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                    </div>
             </div> 
         </div>
     </div>

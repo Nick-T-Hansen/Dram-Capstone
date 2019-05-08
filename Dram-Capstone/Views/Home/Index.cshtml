@@ -10,12 +10,13 @@
         <h2>Recent User Reviews</h2>
         @foreach (var item in Model.OthersWhiskeys)
         {
-            <div>
-                    @Html.ActionLink(($"{item.WhiskeyEntry} reviewed by {item.User.FullName} "), "Details", "Whiskeys", new { id = item.WhiskeyId })             
-            </div>
+        <div>
+            @Html.DisplayFor(modelItem => item.User.FullName) reviewed @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })
+        </div>
         }
     </div>
-    <div class="col-sm-8 text-center">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-7 text-center">
         <h2>Favorite Whiskeys</h2>
         <div class=" row">
             @foreach (var item in Model.FavoriteWhiskeys)
@@ -28,8 +29,14 @@
                                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.Distillery)</h5>
                                 <p class="card-text">@Html.ActionLink(($"{item.Name}"), "Details", "Whiskeys", new { id = item.WhiskeyId })</p>
                                 <div class=" card-footer">
-                                    <p> @Html.DisplayFor(modelItem => item.Review.ReviewScore)<p>
-
+                                    @if (item.Review_Id != null)
+                                    {
+                                    <p>Review Score: @Html.DisplayFor(modelItem => item.Review.ReviewScore)</p>
+                                    }
+                                    else
+                                    {
+                                        <p>You have not reviewed this Whiskey</p>
+                                    }
                                 </div>
                             </div>
                         </div>

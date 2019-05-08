@@ -8,6 +8,7 @@ namespace Dram_Capstone.Models.WhiskeyViewModels
     public class WhiskeyHomeIndexView
     {
         public Whiskey Whiskey { get; set; }
+        public Review Review { get; set; }
 
         public List <Whiskey> FavoriteWhiskeys { get; set; }
         public List <Whiskey> OthersWhiskeys { get; set; }
