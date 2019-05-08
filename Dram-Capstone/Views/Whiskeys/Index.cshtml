@@ -32,7 +32,10 @@
                 <p class="card-text">@Html.ActionLink(($"{item.Name}"), "Details", new { id = item.WhiskeyId })</p>
                 <div class=" card-footer">
                     @Html.DisplayFor(modelItem => item.Favorite)
-                    <a asp-action="Delete" asp-route-id="@item.WhiskeyId">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.WhiskeyId">
+                        Delete
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </a>
                 </div>
             </div> 
         </div>

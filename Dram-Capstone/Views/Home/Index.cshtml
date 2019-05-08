@@ -10,21 +10,21 @@
         <h2>Recent User Reviews</h2>
         @foreach (var item in Model.OthersWhiskeys)
         {
-
             <div>
                     @Html.ActionLink(($"{item.WhiskeyEntry} reviewed by {item.User.FullName} "), "Details", "Whiskeys", new { id = item.WhiskeyId })             
             </div>
         }
     </div>
     <div class="col-s-6">
-            <h2>Favorite Whiskeys</h2>
+        <h2>Favorite Whiskeys</h2>
+
         @foreach (var item in Model.FavoriteWhiskeys)
         {
             if (item.Favorite == true)
             {
-            <div>
-                   @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })             
-            </div>
+                <div>
+                    @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })
+                </div>
             }
         }
     </div> 
