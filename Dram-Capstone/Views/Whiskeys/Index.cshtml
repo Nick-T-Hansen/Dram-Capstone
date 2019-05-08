@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+@*<table class="table">
     <thead>
         <tr>
             <th>
@@ -21,19 +21,20 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody>*@
+<div class=" row">
+
 @foreach (var item in Model) {
-            <tr>
-            <td>
-                @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", new { id = item.WhiskeyId })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Favorite)
-            </td>
-            <td>
-                <a asp-action="Delete" asp-route-id="@item.WhiskeyId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class=" col-sm-3">
+        <div class="card bg-light shadow p-3 mb-5 bg-white rounded">      
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Distillery)</h5>
+                <p class="card-text">@Html.ActionLink(($"{item.Name}"), "Details", new { id = item.WhiskeyId })</p>
+                <div class=" card-footer">
+                    @Html.DisplayFor(modelItem => item.Favorite)
+                    <a asp-action="Delete" asp-route-id="@item.WhiskeyId">Delete</a>
+                </div>
+            </div> 
+        </div>
+    </div>
+ }

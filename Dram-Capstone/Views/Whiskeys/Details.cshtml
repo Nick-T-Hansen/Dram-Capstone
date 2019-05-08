@@ -5,10 +5,8 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>Whiskey</h4>
+    <h4>Whiskey Details</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -26,58 +24,70 @@
         @if (Model.Review_Id != null)
         {
             <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Review_Id)
+                @Html.DisplayNameFor(model => model.Review.DateCreated)
             </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Review.DateCreated)
             </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Review.ReviewScore)
+            </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Review.ReviewScore)
             </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Review.TastingNotes)
+            </dt>
             <dd class="col-sm-10">
                 @Html.DisplayFor(model => model.Review.TastingNotes)
             </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Favorite)
+            </dt>
             <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Review.FragrantFlavor.Name)
+                @Html.DisplayFor(model => model.Favorite)
             </dd>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Review.FruityFlavor.Name)
-            </dd>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Review.GrainyFlavor.Name)
-            </dd>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Review.GrassyFlavor.Name)
-            </dd>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Review.OffNoteFlavor.Name)
-            </dd>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Review.PeatyFlavor.Name)
-            </dd>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Review.WineyFlavor.Name)
-            </dd>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Review.WoodyFlavor.Name)
-            </dd>
+            <div class="col-sm-2">
+                <div class="card text-center">
+                    <div class="card-header">
+                        Flavor Profile
+                    </div>
+                    <div class="card-body">
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Review.FragrantFlavor.Name)
+                        </dd>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Review.FruityFlavor.Name)
+                        </dd>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Review.GrainyFlavor.Name)
+                        </dd>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Review.GrassyFlavor.Name)
+                        </dd>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Review.OffNoteFlavor.Name)
+                        </dd>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Review.PeatyFlavor.Name)
+                        </dd>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Review.WineyFlavor.Name)
+                        </dd>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.Review.WoodyFlavor.Name)
+                        </dd>
+                    </div>
+                </div>
+            </div>
         }
         else
         {
-
             <dt class="col-sm-12">
                 <a asp-controller="Reviews" asp-route-id="@Model.WhiskeyId" asp-action="Create">Add Your Review!</a>
             </dt>
-
-
         }
 
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Favorite)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Favorite)
-        </dd>
     </dl>
 </div>
 <div>
@@ -87,7 +97,7 @@
 
     @if (user.Id == Model.UserId)
     {
-        <a asp-action="Edit" asp-route-id="@Model.WhiskeyId">Edit Whiskey</a>
+        <a asp-action="Edit" asp-route-id="@Model.WhiskeyId">Edit Whiskey</a><a> | </a>
         <a asp-action="Index">Back to List</a>
     }
     else

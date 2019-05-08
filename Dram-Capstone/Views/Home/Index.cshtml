@@ -7,29 +7,25 @@
 
 <div class="row">
     <div class="col-sm-6">
-        <h2>Recent Whiskey Reviews on Dram</h2>
+        <h2>Recent User Reviews</h2>
         @foreach (var item in Model.OthersWhiskeys)
         {
+
             <div>
-                <div>
-                    @Html.ActionLink(($"{item.WhiskeyEntry} reviewed by {item.User.FullName} "), "Details", "Whiskeys", new { id = item.WhiskeyId })
-                </div>
+                    @Html.ActionLink(($"{item.WhiskeyEntry} reviewed by {item.User.FullName} "), "Details", "Whiskeys", new { id = item.WhiskeyId })             
             </div>
         }
     </div>
-            <h2>Favorite Whiskeys</h2>
     <div class="col-s-6">
-            @foreach (var item in Model.FavoriteWhiskeys)
+            <h2>Favorite Whiskeys</h2>
+        @foreach (var item in Model.FavoriteWhiskeys)
+        {
+            if (item.Favorite == true)
             {
-                if (item.Favorite == true)
-                {
-                <div>
-                    <div>
-                        @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })
-                    </div>
-                </div>
-
-                }
+            <div>
+                   @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })             
+            </div>
             }
-        </div> 
+        }
+    </div> 
 </div>
