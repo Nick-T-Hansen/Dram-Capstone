@@ -12,6 +12,12 @@ a.navbar-brand {
 html {
   font-size: 14px;
 }
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
 @media (min-width: 768px) {
   html {
     font-size: 16px;
@@ -23,6 +29,10 @@ html {
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
+}
+.border-weight-5 {
+    border-style: solid;
+    border-width: 5px;
 }
 
 .box-shadow {

@@ -13,8 +13,8 @@
     @if (Model.Review_Id != null)
     {
         <div class="col-sm-3">
-            <div class="card text-left">
-                <div class="card-header">
+            <div class="card text-left border border-weight-5 border-dark">
+                <div class="card-header font-weight-bold" style="background-color:#d1af78">
                     Flavor Profile
                 </div>
                 <div class="card-body">
@@ -47,7 +47,7 @@
         </div>
      }
 
-        <div class="col-sm-9">
+        <div class="col-sm-9 ">
             <dl class="row">
                 <dt class="col-sm-3">
                     @Html.DisplayNameFor(model => model.Distillery)
