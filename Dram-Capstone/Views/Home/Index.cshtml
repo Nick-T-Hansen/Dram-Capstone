@@ -1,8 +1,50 @@
-﻿@{
+﻿@model Dram_Capstone.Models.WhiskeyViewModels.WhiskeyHomeIndexView
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row">
+    <div class="col-sm-4">
+        <h2>Recent User Reviews</h2>
+        <br>
+        @foreach (var item in Model.OthersWhiskeys)
+        {
+        <div>
+            @Html.DisplayFor(modelItem => item.User.FullName) reviewed @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })
+        </div>
+        }
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-7 text-center">
+        <h2><i class="far fa-heart"></i> Whiskeys</h2>
+        <br>
+        <div class=" row d-flex justify-content-center">
+            @foreach (var item in Model.FavoriteWhiskeys)
+            {
+                if (item.Favorite == true)
+                {
+                    <div class=" col-sm-4 ">
+                        <div class="card bg-light shadow mb-5 bg-white rounded">
+                            <div class="card-body">
+                                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Distillery)</h5>
+                                <p class="card-text">@Html.ActionLink(($"{item.Name}"), "Details", "Whiskeys", new { id = item.WhiskeyId })</p>
+                                <div class=" card-footer">
+                                    @if (item.Review_Id != null)
+                                    {
+                                    <p>Review Score: @Html.DisplayFor(modelItem => item.Review.ReviewScore)</p>
+                                    }
+                                    else
+                                    {
+                                        <p>You have not reviewed this Whiskey</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            </div>
+        </div> 
 </div>

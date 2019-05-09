@@ -56,7 +56,7 @@ namespace Dram_Capstone.Data
                     WhiskeyId = 1,
                     Distillery = "Ardbeg",
                     Name = "10 year",
-                    User_Id = user.Id,
+                    UserId = user.Id,
                     Favorite = false,
                     Review_Id = 1
                 }

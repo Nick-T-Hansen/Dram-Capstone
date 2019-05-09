@@ -68,7 +68,8 @@ namespace Dram_Capstone.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
+            //changed route from "~/" to display the home page instead of the LandingPage after login
+            returnUrl = returnUrl ?? Url.Content("~/Home/Index");
 
             if (ModelState.IsValid)
             {

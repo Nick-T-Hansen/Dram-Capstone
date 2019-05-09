@@ -368,8 +368,6 @@ namespace Dram_Capstone.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ApplicationUserId");
-
                     b.Property<string>("Distillery")
                         .IsRequired();
 
@@ -380,14 +378,14 @@ namespace Dram_Capstone.Migrations
 
                     b.Property<int?>("Review_Id");
 
-                    b.Property<string>("User_Id")
+                    b.Property<string>("UserId")
                         .IsRequired();
 
                     b.HasKey("WhiskeyId");
 
-                    b.HasIndex("ApplicationUserId");
-
                     b.HasIndex("Review_Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Whiskey");
 
@@ -399,7 +397,7 @@ namespace Dram_Capstone.Migrations
                             Favorite = false,
                             Name = "10 year",
                             Review_Id = 1,
-                            User_Id = "d45a60e9-e31e-4a24-9535-3a1c56cb617c"
+                            UserId = "197f5202-d1b8-4d62-b22a-30e39fe375c1"
                         });
                 });
 
@@ -698,16 +696,16 @@ namespace Dram_Capstone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d45a60e9-e31e-4a24-9535-3a1c56cb617c",
+                            Id = "197f5202-d1b8-4d62-b22a-30e39fe375c1",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9184336e-3d74-4ceb-b25b-45fb7f9cff68",
+                            ConcurrencyStamp = "60717474-603c-45f0-9b1c-6606ea86b985",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEjTcpfkM0fFDrO7ss7JEM8OKO3zd58deqIzVLSOhsCeX5qtLXnNCDvyfSgBimdZQQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAELZNneEz0mjZWcLjSffNdrxF7AWnyLcCH/j0slaSqjNEpIeHuMyvQXqEn+TtShFFiQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "90727ee4-c263-428e-9425-baf4eb3095bb",
+                            SecurityStamp = "aa9f9145-a64b-4388-8366-6961dbd64f46",
                             TwoFactorEnabled = false,
                             FirstName = "admin",
                             LastName = "admin"
@@ -759,13 +757,14 @@ namespace Dram_Capstone.Migrations
 
             modelBuilder.Entity("Dram_Capstone.Models.Whiskey", b =>
                 {
-                    b.HasOne("Dram_Capstone.Models.ApplicationUser")
-                        .WithMany("Whiskeys")
-                        .HasForeignKey("ApplicationUserId");
-
                     b.HasOne("Dram_Capstone.Models.Review", "Review")
                         .WithMany()
                         .HasForeignKey("Review_Id");
+
+                    b.HasOne("Dram_Capstone.Models.ApplicationUser", "User")
+                        .WithMany("Whiskeys")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

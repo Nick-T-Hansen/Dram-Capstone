@@ -15,6 +15,7 @@ namespace Dram_Capstone.Models
         [Display(Name = "Date Reviewed")]
         public DateTime DateCreated { get; set; }
 
+      
         [Display(Name = "Tasting Notes")]
         public string TastingNotes { get; set; }
 

@@ -1,16 +1,28 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400');
 
 a.navbar-brand {
-  white-space: normal;
-  text-align: center;
-  word-break: break-all;
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
   font-size: 14px;
+}
+body {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Work Sans', sans-serif;
+    font-style: normal;
+    font-weight: 400;
 }
 @media (min-width: 768px) {
   html {
@@ -23,6 +35,11 @@ html {
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
+}
+.border-weight-1 {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d1af78;
 }
 
 .box-shadow {

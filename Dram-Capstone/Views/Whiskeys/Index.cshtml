@@ -1,39 +1,36 @@
 ﻿@model IEnumerable<Dram_Capstone.Models.Whiskey>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "My Library";
 }
 
-<h1>Index</h1>
+<h1>My Whiskey Library</h1>
+<p><a asp-action="Create">Create New</a></p>
+<div class=" row">
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.WhiskeyEntry)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Favorite)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
 @foreach (var item in Model) {
-            <tr>
-            <td>
-                @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", new { id = item.WhiskeyId })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Favorite)
-            </td>
-            <td>
-                <a asp-action="Delete" asp-route-id="@item.WhiskeyId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class=" col-sm-3 text-center">
+        <div class="card bg-light shadow p-3 mb-5 bg-white rounded">      
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.Distillery)</h5>
+                <p class="card-text">@Html.ActionLink(($"{item.Name}"), "Details", new { id = item.WhiskeyId })</p>
+                <div class=" card-footer bg-white ">
+                    @if (item.Favorite == true)
+                    {
+                        <span style="color: Tomato;">
+                            <i class="fas fa-heart style=color:#ff0000"></i>
+                            </span>
+                            }
+                            else
+                            {
+                            <i class="far fa-heart"></i>
+                            }
+
+                            <a asp-action="Delete" asp-route-id="@item.WhiskeyId">
+                                <i class="far fa-trash-alt"></i>
+                            </a>
+                    </div>
+            </div> 
+        </div>
+    </div>
+ }
