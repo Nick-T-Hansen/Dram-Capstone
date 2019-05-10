@@ -32,20 +32,22 @@ namespace Dram_Capstone.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string searchString)
         {
 
             //In order to access user specific information, the current user must be identified
             var user = await GetCurrentUserAsync();
 
             //Whiskey reviews completed by other users and displays the whiskey entry and user name
-            var othersWhiskey = _context.Whiskey
+            var othersWhiskey =  _context.Whiskey
                 .Include(p => p.User)
                 .Where(p => p.UserId != user.Id)
                 .Where(p => p.Review_Id != null)
                 .OrderBy(p => p.Review.DateCreated)
+                .Take(20)
                 .ToList();
 
+            //Logged in users favorite whiskeys
             var favoriteWhiskeys = _context.Whiskey
                 .Include(p => p.Review)
                 .Where(p => p.UserId == user.Id)
@@ -53,6 +55,20 @@ namespace Dram_Capstone.Controllers
                 .ToList();
 
             WhiskeyHomeIndexView WHIV = new WhiskeyHomeIndexView();
+
+            //Search the other users whiskey
+            /*
+            var whiskeys = from m in _context.Whiskey
+                         select m;
+
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+               othersWhiskey = _context.Whiskey.Where(p => p.WhiskeyEntry.Contains(searchString));
+
+                return View(WHIV);
+            }
+            */
             
 
             WHIV.FavoriteWhiskeys = favoriteWhiskeys;

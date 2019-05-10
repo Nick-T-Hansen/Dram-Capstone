@@ -9,9 +9,15 @@ using Dram_Capstone.Data;
 using Dram_Capstone.Models;
 using Microsoft.AspNetCore.Identity;
 using Dram_Capstone.Models.WhiskeyViewModels;
+using Microsoft.AspNetCore.Authorization;
+using System.Security;
+
+
 
 namespace Dram_Capstone.Controllers
 {
+
+
     public class WhiskeysController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -39,8 +45,8 @@ namespace Dram_Capstone.Controllers
 
             return View(await applicationDbContext.ToListAsync());
         }
-       
-        
+
+
         // GET: Whiskeys/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -97,23 +103,22 @@ namespace Dram_Capstone.Controllers
         }
 
         // GET: Whiskeys/Edit/5
+
         public async Task<IActionResult> Edit(int id)
         {
-            //if (id == null)
-            //{
-            //    return NotFound();
-            //}
-                //need to ensure a user can edit all user input information (whiskey details, review details, dropdown selection options). Need whiskey id, whiskey object, review object, review dropdown values
+
+
+            //need to ensure a user can edit all user input information (whiskey details, review details, dropdown selection options). Need whiskey id, whiskey object, review object, review dropdown values
             var whiskey = await _context.Whiskey
-                 .Include(m => m.Review)
-                 .Include(m => m.Review.FragrantFlavor)
-                 .Include(m => m.Review.FruityFlavor)
-                 .Include(m => m.Review.GrainyFlavor)
-                 .Include(m => m.Review.GrassyFlavor)
-                 .Include(m => m.Review.PeatyFlavor)
-                 .Include(m => m.Review.WineyFlavor)
-                 .Include(m => m.Review.WoodyFlavor)
-                 .FirstOrDefaultAsync(m => m.WhiskeyId == id);
+                     .Include(m => m.Review)
+                     .Include(m => m.Review.FragrantFlavor)
+                     .Include(m => m.Review.FruityFlavor)
+                     .Include(m => m.Review.GrainyFlavor)
+                     .Include(m => m.Review.GrassyFlavor)
+                     .Include(m => m.Review.PeatyFlavor)
+                     .Include(m => m.Review.WineyFlavor)
+                     .Include(m => m.Review.WoodyFlavor)
+                     .FirstOrDefaultAsync(m => m.WhiskeyId == id);
 
             var FragrantFlavorData = _context.FragrantFlavor;
             var FruityFlavorData = _context.FruityFlavor;
@@ -134,7 +139,7 @@ namespace Dram_Capstone.Controllers
             List<SelectListItem> WoodyFlavorList = new List<SelectListItem>();
 
             // include the select option in the product type list
-            
+
             //FragrantFlavorList.Insert(0, new SelectListItem
             //{
             //    Text = "Select",
@@ -182,7 +187,7 @@ namespace Dram_Capstone.Controllers
             //    Text = "Select",
             //    Value = ""
             //});
-            
+
             foreach (var f in FragrantFlavorData)
             {
                 SelectListItem li = new SelectListItem
@@ -276,9 +281,18 @@ namespace Dram_Capstone.Controllers
 
             WEVM.Whiskey = whiskey;
 
-            return View(WEVM);
+            var user = await GetCurrentUserAsync();
+
+            if (user.Id == whiskey.UserId)
+            {
+                return View(WEVM);
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
-   
+
 
 
         // POST: Whiskeys/Edit/5
@@ -287,7 +301,7 @@ namespace Dram_Capstone.Controllers
         public async Task<IActionResult> Edit(int id, WhiskeyEditViewModel viewModel)
         {
             var whiskeyId = id;
-            
+
 
             //ModelState.Remove("Whiskey.Review_Id");
             ModelState.Remove("UserId");
@@ -306,7 +320,7 @@ namespace Dram_Capstone.Controllers
                     _context.Update(viewModel.Whiskey);
                     await _context.SaveChangesAsync();
 
-                    return RedirectToAction("Index");                   
+                    return RedirectToAction("Index");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -338,7 +352,19 @@ namespace Dram_Capstone.Controllers
                 return NotFound();
             }
 
-            return View(whiskey);
+            //If a user manually tries to change access the edit or delete functions of another persons whiskies in the url, that user will be redirected to ther whiskey library
+            var user = await GetCurrentUserAsync();
+
+            if (user.Id == whiskey.UserId)
+            {
+                return View(whiskey);
+                
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
+
         }
 
         // POST: Whiskeys/Delete/5

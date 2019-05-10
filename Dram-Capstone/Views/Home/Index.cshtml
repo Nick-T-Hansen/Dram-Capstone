@@ -8,12 +8,18 @@
 <div class="row">
     <div class="col-sm-4">
         <h2>Recent User Reviews</h2>
+        <form>
+            <p>
+                <input type="text" asp-for="SearchString" />
+                <input type="submit" value="Filter" />
+            </p>
+        </form>
         <br>
         @foreach (var item in Model.OthersWhiskeys)
         {
-        <div>
-            @Html.DisplayFor(modelItem => item.User.FullName) reviewed @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })
-        </div>
+            <div>
+                @Html.DisplayFor(modelItem => item.User.FullName) reviewed @Html.ActionLink(($"{item.WhiskeyEntry}"), "Details", "Whiskeys", new { id = item.WhiskeyId })
+            </div>
         }
     </div>
     <div class="col-sm-1"></div>
