@@ -19,17 +19,18 @@
                     {
                         <span style="color: #D35439;">
                             <i class="fas fa-heart style=color:#ff0000"></i>
-                            </span>
-                            }
-                            else
-                            {
-                            <i class="far fa-heart"></i>
-                            }
-
-                            <a asp-action="Delete" asp-route-id="@item.WhiskeyId">
-                                <i class="far fa-trash-alt"></i>
-                            </a>
-                    </div>
+                        </span>
+                    }
+                    else
+                    {
+                    <i class="far fa-heart"></i>
+                    }
+                    <a asp-action="Delete" asp-route-id="@item.WhiskeyId">
+                        <span style="color: black;">
+                            <i class="far fa-trash-alt"></i>
+                        </span>
+                    </a>
+                </div>
             </div> 
         </div>
     </div>

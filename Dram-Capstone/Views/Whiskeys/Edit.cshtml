@@ -23,11 +23,6 @@
                     <input asp-for="Whiskey.Name" class="form-control" />
                     <span asp-validation-for="Whiskey.Name" class="text-danger"></span>
                 </div>
-                <div class="form-group form-check">
-                    <label class="form-check-label">
-                        <input class="form-check-input" asp-for="Whiskey.Favorite" /> @Html.DisplayNameFor(model => model.Whiskey.Favorite)
-                    </label>
-                </div>
                 @if (Model.Whiskey.Review_Id != null)
                 {
                     <div class="form-group">
@@ -41,6 +36,11 @@
                         <span asp-validation-for="Whiskey.Review.TastingNotes" class="text-danger"></span>
                     </div>
                 }
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" asp-for="Whiskey.Favorite" /> @Html.DisplayNameFor(model => model.Whiskey.Favorite)
+                    </label>
+                </div>
         </div>
         <div class=" col-sm-1"></div>
             <div class=" col-sm-4">
