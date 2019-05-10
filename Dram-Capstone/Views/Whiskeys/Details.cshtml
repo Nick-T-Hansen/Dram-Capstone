@@ -18,35 +18,58 @@
                         Flavor Profile
                     </div>
                     <div class="card-body">
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Review.FragrantFlavor.Name)
-                        </dd>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Review.FruityFlavor.Name)
-                        </dd>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Review.GrainyFlavor.Name)
-                        </dd>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Review.GrassyFlavor.Name)
-                        </dd>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Review.OffNoteFlavor.Name)
-                        </dd>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Review.PeatyFlavor.Name)
-                        </dd>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Review.WineyFlavor.Name)
-                        </dd>
-                        <dd class="col-sm-10">
-                            @Html.DisplayFor(model => model.Review.WoodyFlavor.Name)
-                        </dd>
+                        @if (Model.Review.FragrantFlavor.Name != "Not Applicable")
+                        {
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Review.FragrantFlavor.Name)
+                            </dd>
+                        }
+                        @if (Model.Review.FruityFlavor.Name != "Not Applicable")
+                        {
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Review.FruityFlavor.Name)
+                            </dd>
+                        }
+                        @if (Model.Review.GrainyFlavor.Name != "Not Applicable")
+                        {
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Review.GrainyFlavor.Name)
+                            </dd>
+                        }
+                        @if (Model.Review.GrassyFlavor.Name != "Not Applicable")
+                        {
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Review.GrassyFlavor.Name)
+                            </dd>
+                        }
+                        @if (Model.Review.OffNoteFlavor.Name != "Not Applicable")
+                        {
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Review.OffNoteFlavor.Name)
+                            </dd>
+                        }
+                        @if (Model.Review.PeatyFlavor.Name != "Not Applicable")
+                        {
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Review.PeatyFlavor.Name)
+                            </dd>
+                        }
+                        @if (Model.Review.WineyFlavor.Name != "Not Applicable")
+                        {
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Review.WineyFlavor.Name)
+                            </dd>
+                        }
+                        @if (Model.Review.WoodyFlavor.Name != "Not Applicable")
+                        {
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Review.WoodyFlavor.Name)
+                            </dd>
+                        }
                     </div>
                 </div>
             </div>
         }
-
         <div class="col-sm-7 ">
             <dl class="row">
                 <dt class="col-sm-3">
@@ -95,9 +118,6 @@
                     </dt>
                 }
             </dl>
-        </div>
-        <div class="col-sm-2 ">
-        </div>
         <div>
             @*conditional rendering if the user not logged in is reviewing the details,
             they can not add a review or edit the post *@
@@ -113,4 +133,8 @@
                 @Html.ActionLink("Go Back", "Index", "Home")
             }
         </div>
+        </div>
+        <div class="col-sm-2 ">
+        </div>
+
 

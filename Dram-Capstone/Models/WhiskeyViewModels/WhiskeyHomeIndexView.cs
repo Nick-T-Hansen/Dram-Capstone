@@ -12,5 +12,6 @@ namespace Dram_Capstone.Models.WhiskeyViewModels
 
         public List <Whiskey> FavoriteWhiskeys { get; set; }
         public List <Whiskey> OthersWhiskeys { get; set; }
+        public string SearchString { get; set; }
     }
 }
