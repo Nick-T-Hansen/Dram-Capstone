@@ -4,10 +4,8 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h4>Edit Review</h4>
 
-
-    <h4>Whiskey</h4>
     <hr />
     <div class="row">
         <div class="col-md-4">
@@ -42,6 +40,12 @@
                         <textarea asp-for="Whiskey.Review.TastingNotes" cols="80" rows="3" class="form-control"></textarea>
                         <span asp-validation-for="Whiskey.Review.TastingNotes" class="text-danger"></span>
                     </div>
+                }
+        </div>
+        <div class=" col-sm-1"></div>
+            <div class=" col-sm-4">
+                @if (Model.Whiskey.Review_Id != null)
+                {
                     <div class="form-group">
                         <label asp-for="Whiskey.Review.WoodyFlavor_Id" class="control-label"></label>
                         <select asp-for="Whiskey.Review.WoodyFlavor_Id" form-control" asp-items="@Model.WoodyFlavors"></select>
@@ -82,14 +86,13 @@
                         <select asp-for="Whiskey.Review.GrassyFlavor_Id" form-control" asp-items="@Model.GrassyFlavors"></select>
                         <span asp-validation-for="Whiskey.Review.GrassyFlavor_Id" class="text-danger"></span>
                     </div>
-                 }
-                    <input type="submit" value="Save" class="btn btn-primary" />
-            </form>
-        </div>
-    </div>
-        <div>
-             @*<a asp-action="Edit" asp-route-id="@Model.Whiskey.WhiskeyId">Save Edits</a> |*@
-            <a asp-action="Index">Back to List</a>
+                }
+                <input type="submit" value="Save" class="btn btn-primary border-0" style="background-color:#ff6347" />
+                <a asp-action="Index">Back to List</a>
+                </form>
+
+
+            </div>
         </div>
 
         @section Scripts {

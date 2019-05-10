@@ -64,6 +64,7 @@ namespace Dram_Capstone.Controllers
                 .Include(m => m.Review.PeatyFlavor)
                 .Include(m => m.Review.WineyFlavor)
                 .Include(m => m.Review.WoodyFlavor)
+                .Include(m => m.Review.OffNoteFlavor)
                 .FirstOrDefaultAsync(m => m.WhiskeyId == id);
             if (whiskey == null)
             {

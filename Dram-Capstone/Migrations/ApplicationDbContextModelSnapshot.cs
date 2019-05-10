@@ -61,6 +61,11 @@ namespace Dram_Capstone.Migrations
                         {
                             FragrantFlavor_Id = 6,
                             Name = "Rose"
+                        },
+                        new
+                        {
+                            FragrantFlavor_Id = 7,
+                            Name = "Not Applicable"
                         });
                 });
 
@@ -111,6 +116,11 @@ namespace Dram_Capstone.Migrations
                         {
                             FruityFlavor_Id = 7,
                             Name = "Raisins"
+                        },
+                        new
+                        {
+                            FruityFlavor_Id = 8,
+                            Name = "Not Applicable"
                         });
                 });
 
@@ -151,6 +161,11 @@ namespace Dram_Capstone.Migrations
                         {
                             GrainyFlavor_Id = 5,
                             Name = "Biscuits"
+                        },
+                        new
+                        {
+                            GrainyFlavor_Id = 6,
+                            Name = "Not Applicable"
                         });
                 });
 
@@ -191,6 +206,11 @@ namespace Dram_Capstone.Migrations
                         {
                             GrassyFlavor_Id = 5,
                             Name = "Dried Tea Leaf"
+                        },
+                        new
+                        {
+                            GrassyFlavor_Id = 6,
+                            Name = "Not Applicable"
                         });
                 });
 
@@ -241,6 +261,11 @@ namespace Dram_Capstone.Migrations
                         {
                             OffNoteFlavor_Id = 7,
                             Name = "Vinegar"
+                        },
+                        new
+                        {
+                            OffNoteFlavor_Id = 8,
+                            Name = "Not Applicable"
                         });
                 });
 
@@ -291,6 +316,11 @@ namespace Dram_Capstone.Migrations
                         {
                             PeatyFlavor_Id = 7,
                             Name = "Smoked Salmon"
+                        },
+                        new
+                        {
+                            PeatyFlavor_Id = 8,
+                            Name = "Not Applicable"
                         });
                 });
 
@@ -397,7 +427,7 @@ namespace Dram_Capstone.Migrations
                             Favorite = false,
                             Name = "10 year",
                             Review_Id = 1,
-                            UserId = "197f5202-d1b8-4d62-b22a-30e39fe375c1"
+                            UserId = "22b8b579-13ea-4487-a142-d3655119f4be"
                         });
                 });
 
@@ -453,6 +483,11 @@ namespace Dram_Capstone.Migrations
                         {
                             WineyFlavor_Id = 8,
                             Name = "Red Wine"
+                        },
+                        new
+                        {
+                            WineyFlavor_Id = 9,
+                            Name = "Not Applicable"
                         });
                 });
 
@@ -508,6 +543,11 @@ namespace Dram_Capstone.Migrations
                         {
                             WoodyFlavor_Id = 8,
                             Name = "Liquorice"
+                        },
+                        new
+                        {
+                            WoodyFlavor_Id = 9,
+                            Name = "Not Applicable"
                         });
                 });
 
@@ -696,19 +736,19 @@ namespace Dram_Capstone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "197f5202-d1b8-4d62-b22a-30e39fe375c1",
+                            Id = "22b8b579-13ea-4487-a142-d3655119f4be",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "60717474-603c-45f0-9b1c-6606ea86b985",
+                            ConcurrencyStamp = "0b9d9038-5af9-439e-8150-dc50509139d4",
                             Email = "admin@admin.com",
                             EmailConfirmed = true,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@ADMIN.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELZNneEz0mjZWcLjSffNdrxF7AWnyLcCH/j0slaSqjNEpIeHuMyvQXqEn+TtShFFiQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEFk9MHdFXjKpCkXbH2poNvxVspE/Z+G4v7+fPvq9mxDR/oWNbEjiMZLpTX0Cmk+v0Q==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "aa9f9145-a64b-4388-8366-6961dbd64f46",
+                            SecurityStamp = "ed39f40d-5348-47fa-b8a5-3f04698ab364",
                             TwoFactorEnabled = false,
-                            FirstName = "admin",
-                            LastName = "admin"
+                            FirstName = "Tim",
+                            LastName = "Carter"
                         });
                 });
 

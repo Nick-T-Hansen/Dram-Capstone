@@ -37,8 +37,8 @@ namespace Dram_Capstone.Data
             // Create a new user for Identity Framework
             ApplicationUser user = new ApplicationUser
             {
-                FirstName = "admin",
-                LastName = "admin",
+                FirstName = "Tim",
+                LastName = "Carter",
                 Email = "admin@admin.com",
                 NormalizedEmail = "ADMIN@ADMIN.COM",
                 EmailConfirmed = true,
@@ -113,8 +113,12 @@ namespace Dram_Capstone.Data
                 {
                     FragrantFlavor_Id = 6,
                     Name = "Rose"
+                },
+                new FragrantFlavor()
+                {
+                    FragrantFlavor_Id = 7,
+                    Name = "Not Applicable"
                 }
-
             );
             modelBuilder.Entity<FruityFlavor>().HasData(
                 new FruityFlavor()
@@ -157,7 +161,12 @@ namespace Dram_Capstone.Data
                 {
                     FruityFlavor_Id = 7,
                     Name = "Raisins"
-                }
+                },
+                 new FruityFlavor()
+                 {
+                     FruityFlavor_Id = 8,
+                     Name = "Not Applicable"
+                 }
             );
 
             modelBuilder.Entity<GrainyFlavor>().HasData(
@@ -185,7 +194,12 @@ namespace Dram_Capstone.Data
                 {
                     GrainyFlavor_Id = 5,
                     Name = "Biscuits"
-                }
+                },
+                 new GrainyFlavor()
+                 {
+                     GrainyFlavor_Id = 6,
+                     Name = "Not Applicable"
+                 }
             );
 
             modelBuilder.Entity<GrassyFlavor>().HasData(
@@ -213,7 +227,12 @@ namespace Dram_Capstone.Data
                {
                    GrassyFlavor_Id = 5,
                    Name = "Dried Tea Leaf"
-               }
+               },
+                new GrassyFlavor()
+                {
+                    GrassyFlavor_Id = 6,
+                    Name = "Not Applicable"
+                }
            );
 
             modelBuilder.Entity<OffNoteFlavor>().HasData(
@@ -251,8 +270,13 @@ namespace Dram_Capstone.Data
                {
                    OffNoteFlavor_Id = 7,
                    Name = "Vinegar",
-               }
-             
+               },
+                new OffNoteFlavor()
+                {
+                    OffNoteFlavor_Id = 8,
+                    Name = "Not Applicable"
+                }
+
            );
 
             modelBuilder.Entity<PeatyFlavor>().HasData(
@@ -290,7 +314,12 @@ namespace Dram_Capstone.Data
                 {
                     PeatyFlavor_Id = 7,
                     Name = "Smoked Salmon"
-                }
+                },
+                 new PeatyFlavor()
+                 {
+                     PeatyFlavor_Id = 8,
+                     Name = "Not Applicable"
+                 }
            );
 
             modelBuilder.Entity<WineyFlavor>().HasData(
@@ -333,7 +362,12 @@ namespace Dram_Capstone.Data
                 {
                     WineyFlavor_Id = 8,
                     Name = "Red Wine"
-                }
+                },
+                 new WineyFlavor()
+                 {
+                     WineyFlavor_Id = 9,
+                     Name = "Not Applicable"
+                 }
 
            );
 
@@ -377,7 +411,12 @@ namespace Dram_Capstone.Data
                {
                    WoodyFlavor_Id = 8,
                    Name = "Liquorice"
-               }
+               },
+                new WoodyFlavor()
+                {
+                    WoodyFlavor_Id = 9,
+                    Name = "Not Applicable"
+                }
            );
            
         }

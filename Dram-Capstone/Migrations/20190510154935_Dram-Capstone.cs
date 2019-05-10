@@ -363,7 +363,7 @@ namespace Dram_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName", "FirstName", "LastName" },
-                values: new object[] { "197f5202-d1b8-4d62-b22a-30e39fe375c1", 0, "60717474-603c-45f0-9b1c-6606ea86b985", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAELZNneEz0mjZWcLjSffNdrxF7AWnyLcCH/j0slaSqjNEpIeHuMyvQXqEn+TtShFFiQ==", null, false, "aa9f9145-a64b-4388-8366-6961dbd64f46", false, null, "admin", "admin" });
+                values: new object[] { "22b8b579-13ea-4487-a142-d3655119f4be", 0, "0b9d9038-5af9-439e-8150-dc50509139d4", "ApplicationUser", "admin@admin.com", true, false, null, "ADMIN@ADMIN.COM", null, "AQAAAAEAACcQAAAAEFk9MHdFXjKpCkXbH2poNvxVspE/Z+G4v7+fPvq9mxDR/oWNbEjiMZLpTX0Cmk+v0Q==", null, false, "ed39f40d-5348-47fa-b8a5-3f04698ab364", false, null, "Tim", "Carter" });
 
             migrationBuilder.InsertData(
                 table: "FragrantFlavor",
@@ -375,7 +375,8 @@ namespace Dram_Capstone.Migrations
                     { 3, "Pine" },
                     { 4, "Honey" },
                     { 5, "Beeswax" },
-                    { 6, "Rose" }
+                    { 6, "Rose" },
+                    { 7, "Not Applicable" }
                 });
 
             migrationBuilder.InsertData(
@@ -383,13 +384,14 @@ namespace Dram_Capstone.Migrations
                 columns: new[] { "FruityFlavor_Id", "Name" },
                 values: new object[,]
                 {
+                    { 7, "Raisins" },
                     { 6, "Canned Peaches" },
                     { 5, "Marmalade" },
-                    { 4, "Orange" },
-                    { 7, "Raisins" },
+                    { 8, "Not Applicable" },
+                    { 3, "Cherry" },
                     { 2, "Fig" },
                     { 1, "Apple" },
-                    { 3, "Cherry" }
+                    { 4, "Orange" }
                 });
 
             migrationBuilder.InsertData(
@@ -397,11 +399,12 @@ namespace Dram_Capstone.Migrations
                 columns: new[] { "GrainyFlavor_Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Coffee" },
-                    { 2, "Dried Hops" },
-                    { 3, "Malted Milk" },
+                    { 5, "Biscuits" },
                     { 4, "Breakfast Cereal" },
-                    { 5, "Biscuits" }
+                    { 6, "Not Applicable" },
+                    { 2, "Dried Hops" },
+                    { 1, "Coffee" },
+                    { 3, "Malted Milk" }
                 });
 
             migrationBuilder.InsertData(
@@ -413,7 +416,8 @@ namespace Dram_Capstone.Migrations
                     { 2, "Green Sticks" },
                     { 3, "Tobacco" },
                     { 4, "Dried Herbs" },
-                    { 5, "Dried Tea Leaf" }
+                    { 5, "Dried Tea Leaf" },
+                    { 6, "Not Applicable" }
                 });
 
             migrationBuilder.InsertData(
@@ -422,6 +426,7 @@ namespace Dram_Capstone.Migrations
                 values: new object[,]
                 {
                     { 6, "Rusty" },
+                    { 8, "Not Applicable" },
                     { 7, "Vinegar" },
                     { 5, "Struck Matches" },
                     { 3, "Fatty" },
@@ -441,7 +446,8 @@ namespace Dram_Capstone.Migrations
                     { 4, "Iodine" },
                     { 5, "Mouthwash" },
                     { 6, "Peat Smoke" },
-                    { 7, "Smoked Salmon" }
+                    { 7, "Smoked Salmon" },
+                    { 8, "Not Applicable" }
                 });
 
             migrationBuilder.InsertData(
@@ -449,12 +455,13 @@ namespace Dram_Capstone.Migrations
                 columns: new[] { "WineyFlavor_Id", "Name" },
                 values: new object[,]
                 {
-                    { 3, "Butter" },
+                    { 4, "Chocolate" },
+                    { 9, "Not Applicable" },
                     { 8, "Red Wine" },
                     { 7, "Port" },
                     { 6, "Sherry" },
                     { 1, "Almond" },
-                    { 4, "Chocolate" },
+                    { 3, "Butter" },
                     { 2, "Cream" },
                     { 5, "Olive" }
                 });
@@ -464,14 +471,15 @@ namespace Dram_Capstone.Migrations
                 columns: new[] { "WoodyFlavor_Id", "Name" },
                 values: new object[,]
                 {
-                    { 5, "Pepper" },
                     { 6, "Cigar Box" },
-                    { 4, "Clove" },
                     { 7, "Ginger" },
+                    { 5, "Pepper" },
+                    { 8, "Liquorice" },
+                    { 3, "Syrup" },
                     { 2, "Creme Brulee" },
                     { 1, "Caramel" },
-                    { 3, "Syrup" },
-                    { 8, "Liquorice" }
+                    { 4, "Clove" },
+                    { 9, "Not Applicable" }
                 });
 
             migrationBuilder.InsertData(
@@ -482,7 +490,7 @@ namespace Dram_Capstone.Migrations
             migrationBuilder.InsertData(
                 table: "Whiskey",
                 columns: new[] { "WhiskeyId", "Distillery", "Favorite", "Name", "Review_Id", "UserId" },
-                values: new object[] { 1, "Ardbeg", false, "10 year", 1, "197f5202-d1b8-4d62-b22a-30e39fe375c1" });
+                values: new object[] { 1, "Ardbeg", false, "10 year", 1, "22b8b579-13ea-4487-a142-d3655119f4be" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
