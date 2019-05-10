@@ -64,6 +64,10 @@ html {
 a:any-link {
     color: #947d59;
 }
+a:any-link:hover {
+    color: #D35439;
+    text-decoration: none;
+}
 
 body {
   /* Margin bottom by footer height */

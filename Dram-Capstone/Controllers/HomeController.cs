@@ -43,7 +43,7 @@ namespace Dram_Capstone.Controllers
                 .Include(p => p.User)
                 .Where(p => p.UserId != user.Id)
                 .Where(p => p.Review_Id != null)
-                .OrderBy(p => p.Review.DateCreated)
+                .OrderByDescending(p => p.Review.DateCreated)
                 .Take(20)
                 .ToList();
 
