@@ -59,14 +59,12 @@ namespace Dram_Capstone.Controllers
             //Search the other users whiskey using the search bar         
             if (!String.IsNullOrEmpty(searchString))
             {
-
-
-
-                othersWhiskey = othersWhiskey.Where(s => s.WhiskeyEntry.Contains(searchString)).ToList();
+                othersWhiskey = othersWhiskey
+                    .Where(s => s.WhiskeyEntry.Contains(searchString))
+                    .ToList();
             }
-     
 
-
+            //adds the query to the respective property to create the view
             WHIV.FavoriteWhiskeys = favoriteWhiskeys;
             WHIV.OthersWhiskeys = othersWhiskey;
 
