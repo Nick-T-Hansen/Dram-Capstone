@@ -5,10 +5,10 @@
 }
 @* Left column of welcome page *@
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-9">
         <div class="jumbotron " style="background-color:#d1af78">
             <div class="container">
-                <h1 class="display-4">Dram</h1>
+                <h2 class="display-4 font-weight-lighter .text-white"><i class="fas fa-glass-whiskey"></i> Dram.</h2>
                 <h4 class="font-weight-light">
                     /dram/ n. <br />
                     "a small drink of whiskey or other spirits"
@@ -25,9 +25,20 @@
     </div>
 
     @* Right column of welcome page *@
-    <div class="col-sm-4 d-flex my-auto justify-content-center">
+    <div class="col-sm-3 d-flex my-auto justify-content-center">
         <div class="d-flex flex-column">
-            <h2 class="display-3 text-center font-weight-lighter .text-white"><i class="fas fa-glass-whiskey"></i> Dram.</h2>
+           
+            
+            <div>
+
+                <a class="btn btn-primary text-white btn-lg btn-block border-0" style="background-color:#D35439" asp-area="Identity" asp-page="/Account/Register">Register</a>
+            </div>
+            <div>
+                <br>
+            </div>
+            <div>
+                <a class="btn btn-primary text-white btn-lg btn-block border-0" style="background-color:#D35439" asp-area="Identity" asp-page="/Account/Login">Login</a>
+            </div>
         </div>
     </div>
 </div>
