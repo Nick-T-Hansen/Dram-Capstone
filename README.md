@@ -8,9 +8,9 @@ I created Dram. in C# using MVC Entity with Identity framework. I created a rela
 
 
 ## Getting Started
-1. clone repo using `git clone https://github.com/Nick-T-Hansen/Dram-Capstone.git`
-2. open Virtual Studio and run Dram-Capstone
-6. create a new account and login
+1. Olone repo using `git clone https://github.com/Nick-T-Hansen/Dram-Capstone.git`
+1. open Virtual Studio and run Dram-Capstone
+1. Create a new account and login
 
 ## Version II Aspirations
 1. Given a user wants to find a whiskey review based on a combination of flavors
