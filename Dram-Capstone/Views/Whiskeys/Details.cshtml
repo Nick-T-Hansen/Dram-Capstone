@@ -12,6 +12,7 @@
     <div class=" row">
         @if (Model.Review_Id != null)
         {
+            //render the flavor profile, if available
             <div class="col-sm-3">
                 <div class="card text-left border border-weight-5 border-dark">
                     <div class="card-header font-weight-bold" style="background-color:#d1af78">
@@ -70,6 +71,7 @@
                 </div>
             </div>
         }
+        @*Render the distillery information and review specifics if available*@
         <div class="col-sm-7 ">
             <dl class="row">
                 <dt class="col-sm-3">
