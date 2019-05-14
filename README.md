@@ -8,7 +8,7 @@ I created Dram. in C# using MVC Entity with Identity framework. I created a rela
 
 
 ## Getting Started
-1. Olone repo using `git clone https://github.com/Nick-T-Hansen/Dram-Capstone.git`
+1. Clone repo using `git clone https://github.com/Nick-T-Hansen/Dram-Capstone.git`
 1. open Virtual Studio and run Dram-Capstone
 1. Create a new account and login
 
