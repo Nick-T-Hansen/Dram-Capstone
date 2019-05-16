@@ -4,8 +4,8 @@
     ViewData["Title"] = "My Library";
 }
 
-<h1>My Whiskey Library</h1>
-<p><a asp-action="Create"><i class="fas fa-plus"></i>Whiskey</a></p>
+<h2>My Whiskey Library</h2>
+<p><a asp-action="Create" title="Add Whiskey"><i class="fas fa-plus"></i>Whiskey</a></p>
 <div class=" row">
 
 @foreach (var item in Model) {
@@ -25,7 +25,7 @@
                     {
                     <i class="far fa-heart"></i>
                     }
-                    <a asp-action="Delete" asp-route-id="@item.WhiskeyId">
+                    <a asp-action="Delete" asp-route-id="@item.WhiskeyId" title="Delete">
                         <span style="color: black;">
                             <i class="far fa-trash-alt"></i>
                         </span>
